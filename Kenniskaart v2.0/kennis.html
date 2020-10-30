@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/kenniskaart_v2.0.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogeschool eBilly</title>
+</head>
+
+<body>
+
+
+<div class="Container" id="Main">
+        <div class="Topic">
+            <p class="Title" id="Topic-Title">Onderwerp</p>
+            <div class="Text" id="Topic-Text"></div>
+        </div>
+
+        <Div class="Roles">
+            <p class="Title" id="Roles-Title"> Rol</p>
+            <p class="Text" id="Roles-Text"></p>
+        </div>
+
+        <Div class="Skills">
+            <p class="Title" id="Skills-Title"> Competenties</p>
+            <p class="Text" id="Skills-Text"></p>
+        </div>
+
+        <Div class="What">
+            <p class="Title" id="What-Title"> Wat is het? <br> (What)</p>
+            <p class="Text" id="What-Text"></p>
+        </div>
+        
+        <Div class="Why">
+            <p class="Title" id="Why-Title">Waarvoor is het? (Why)</p>
+            <p class="Text" id="Why-Text"></p>
+        </div>
+        
+        <Div class="How">
+            <p class="Title" id="How-Title"> Hoe wordt het toegepast? (How)</p>
+            <p class="Text" id="How-Text"></p>
+        </div>
+
+        <Div class="Examples">
+            <p class="Title" id="Examples-Title"> Hoe wordt het toegepast? (How)</p>
+            <p class="Text" id="Examples-Text" ></p>
+        </div>
+
+<div id="Grid">
+    <table class="table table-striped">
+    <tr class="bg-info">
+        <th>Bronnen</th>
+        <th>Niveau</th>
+        <th>Leestijd?</th>
+        <th>Rating</th>
+    </tr>
+   <tbody id="myTable"></tbody>
+    </table>
+</div>
+
+
+
+    <script>
+    fetch('https://run.mocky.io/v3/f199a3e4-975a-4b4f-96d3-98370c523e5a')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var mainContainer = document.getElementById("Topic-Text");
+            for (var i = 0; i < data.length; i++) {
+                var p = document.createElement("p");
+                p.innerHTML = ' ' + data[i].onderwerp;
+                mainContainer.appendChild(p);    
+            }
+            
+            var RolesContainer = document.getElementById("Roles-Text");
+            for (var i = 0; i < data.length; i++) {
+                var p = document.createElement("p");
+                p.innerHTML = ' ' + data[i].rol;
+                RolesContainer.appendChild(p);    
+            }
+
+            var SkillsContainer = document.getElementById("Skills-Text");
+            for (var i = 0; i < data.length; i++) {
+                var p = document.createElement("p");
+                p.innerHTML = ' ' + data[i].competentie;
+                SkillsContainer.appendChild(p);
+            } 
+
+
+            var WhatContainer = document.getElementById("What-Text");
+            for (var i = 0; i < data.length; i++) {
+                var p = document.createElement("p");
+                p.innerHTML = ' ' + data[i].p;
+                WhatContainer.appendChild(p); 
+            }
+            
+            var WhyContainer = document.getElementById("Why-Text");
+            for (var i = 0; i < data.length; i++) {
+                var p = document.createElement("p");
+                p.innerHTML = ' ' + data[i].why;
+                WhyContainer.appendChild(p); 
+            }
+
+            var HowContainer = document.getElementById("How-Text");
+            for (var i = 0; i < data.length; i++) {
+                var p = document.createElement("p");
+                p.innerHTML = ': ' + data[i].how;
+                HowContainer.appendChild(p); 
+            }
+
+            var ExamplesContainer = document.getElementById("Examples-Text");
+            for (var i = 0; i < data.length; i++) {
+                var p = document.createElement("p");
+                p.innerHTML = ' ' + data[i].undefined;
+                ExamplesContainer.appendChild(p); 
+            }
+
+            var table = document.getElementById('myTable')
+
+            for (var i = 0; i <data.length; i ++){
+                var row = `<tr>
+                        <td>${data[i].bronnen}</td>
+                        <td>${data[i].niveau}</td>
+                        <td>${data[i].studieduur}</td>
+                        <td>${data[i].rating}</td>
+                    </tr>`
+                table.innerHTML += row
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

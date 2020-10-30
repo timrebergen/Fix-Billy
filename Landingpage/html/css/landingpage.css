@@ -1,0 +1,151 @@
+#Container{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+Header{
+  position: relative;
+  height: 90px;
+  width: 100%;
+  overflow-y: hidden;
+  background-color: #ffffff;
+  border-bottom: 1px solid #1AA1E1;
+}
+
+header .Logo{
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 5%;
+}
+
+
+Header #Title{
+  font-size: 26px;
+  font-weight: bold;
+  position: absolute;
+  color: #1AA1E1;
+  left: 10%;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+Header #Searchbar{
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+  width: 350px;
+  height: 50%;
+  text-align: center;
+}
+
+.Content-Titles{
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15px;
+}
+
+.Kenniskaart-Recommended, .Kenniskaart-Uploaded{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Selectmenu{
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#Rol, #Comp{
+  margin: 5px;
+  font-size: 20px;
+}
+
+.Recommended{
+  float: left;
+
+}
+.Uploaded{
+  float: right;
+}
+
+.Cards-Title{
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#Kenniskaart-Recommended {
+  border: 1px;
+  border-style: solid;
+  border-radius: 1px;
+  background-color: #f6f6f6;
+  border-color: #000000;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-align: left;
+  width: 400px;
+  max-width: 600px;
+  margin-top: 55px;
+  margin-bottom: 15px;
+  padding: 0px 12px;
+  
+}
+
+#Kenniskaart-Uploaded{
+  border: 1px;
+  border-style: solid;
+  border-radius: 1px;
+  background-color: #f6f6f6;
+  border-color: #000000;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-align: left;
+  width: 400px;
+  max-width: 600px;
+  margin-top: 55px;
+  margin-bottom: 15px;
+  padding: 0px 12px;
+}
+
+#Button{
+  font-weight: bold;
+  margin-left: 75%;
+  border-style: none;
+  color: #1AA1E1;
+  background-color: transparent;
+  transition-duration: 0.4s;
+}
+
+#Button:hover{
+  background-color:#1AA1E1;
+  color: white;
+  border-radius: 5px;
+}
+
+#Title-Recommended{
+  float: left;
+  margin-left: 15px;
+  font-size: 24px;
+  text-align: left;
+  left: 15%;
+  font-weight: bolder;
+  vertical-align: top;
+  margin-top: 15px;
+  transform: translateX(100%);
+}
+
+#Title-Uploaded{
+  float: right;
+  text-align: right;
+  font-size: 24px;
+
+  position: relative;
+  font-weight: bolder;
+  vertical-align: top;
+  margin-top: 15px;
+  transform: translateX(-100%);
+}

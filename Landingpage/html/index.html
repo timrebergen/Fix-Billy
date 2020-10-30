@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landingpage Billy v.01</title>
+    <link rel="stylesheet" type="text/css" href="css/landingpage.css"/>
+</head>
+
+<body>
+
+<section id="Container">
+    <Header>
+        <img src="css/hu_logo.png" class="Logo">
+        <h1 id="Title">BILLY</h1>
+        <div class="Searchbar">
+            <div><input type="text" placeholder="Zoeken...bijv. 'Customer Journey'" name="search" id="Searchbar"></div>
+    </div>
+
+    <section class="Selectmenu">
+        <div id="Rol">
+            <form>
+                <label for="Rol-select">Kies je Rol:</label>
+                <select name="select" id="select">
+                <option value="Front-End">Front-End</option>
+                <option value="Back-End">Back-End</option>
+                <option value="À.I">A.I</option>
+                <option value="Product-Owner">Product-Owner</option>
+                <option value="Cyber Security & Cloud">Cyber Security & Cloud</option>\
+                </select>
+            </form>
+        </div>
+        
+        <div id="Comp">
+            <form>
+                <label for="Comp-select">Kies je Niveau:</label>
+                <select name="select" id="select">
+                <option value="Front-End">Beginner</option>
+                <option value="Front-End">Gevorded</option>
+                <option value="Front-End">Expert</option>
+                </select>
+            </form>
+        </div>
+    </section>
+</section>
+
+<section class="Content" id="Content">
+    <div class="Content-Titles">
+        <h1 id="Title-Recommended">Aanbevolen voor jouw</h1>    
+        <h2 id="Title-Uploaded">Laatst geüpload</h2>
+    </div>
+
+    <section class="Recommended">
+        <div class="Kenniskaart-Recommended" id="Kenniskaart-Recommended">
+            <p class="Cards-Title">Customer Journey</p>
+            <p class="Cards-Text" id="Cards-Text"></p>
+            <form id="link" action="file:///F:/School%20NIET%20WEGHALEN/Kenniskaart%20v2.0/kennis.html">
+                <button type="submit" id="Button">Lees meer</button>
+             </form>
+        </div> 
+
+        <Div class="Kenniskaart-Recommended" id="Kenniskaart-Recommended">
+            <p class="Cards-Title">Value Proposition Canvas</p>
+            <p class="Cards-Text" id="Cards-Text"></p>
+            <form id="link" action="file:///F:/School%20NIET%20WEGHALEN/Kenniskaart%20v2.0/kennis.html">
+                <button type="submit" id="Button">Lees meer</button>
+             </form>  
+        </div>
+    </section>
+    
+    <section class="Uploaded">
+        <Div class="Kenniskaart-Uploaded" id="Kenniskaart-Uploaded">
+            <p class="Cards-Title">Het belang van Miro</p>
+            <p class="Cards-Text" id="Cards-Text"></p>
+            <form id="link" action="file:///F:/School%20NIET%20WEGHALEN/Kenniskaart%20v2.0/kennis.html">
+                <button type="submit" id="Button">Lees meer</button>
+             </form>  
+        </Div> 
+
+        <Div class="Kenniskaart-Uploaded" id="Kenniskaart-Uploaded">
+            <p class="Cards-Title">Instructievideo JavaScript</p>
+            <p class="Cards-Text" id="Cards-Text"></p>
+            <form id="link" action="file:///F:/School%20NIET%20WEGHALEN/Kenniskaart%20v2.0/kennis.html">
+                <button type="submit" id="Button">Lees meer</button>
+             </form>    
+        </Div>     
+    </section>
+</section>
+
+<script>
+    fetch('https://run.mocky.io/v3/f199a3e4-975a-4b4f-96d3-98370c523e5a')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var WatContainer = document.getElementById("Cards-Text");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = ' ' + data[i].wat;
+                WatContainer.appendChild(div);    
+            }
+        }
+</script>
+</body>
+</html>
