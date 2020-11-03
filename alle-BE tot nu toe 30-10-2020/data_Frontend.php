@@ -80,7 +80,7 @@ $drivers = PDO::getAvailableDrivers ();
 // 
 if ( 
     isset($_POST['opslaan']) 
-    and $_FILES['plaatje']['name'] <> '' and $_POST['rol'] <> '' and $_POST['onderwerp'] <> '' and $_POST['competentie'] <> '' and $_POST['wat'] <> '' and $_POST['why'] <> '' and $_POST['how'] <> ''  and $_POST['bronnen'] <> '' and $_POST['niveau'] <> '' and $_POST['studieduur'] <> '' and $_POST['rating'] <> ''
+    and $_POST['plaatje']['name'] <> '' and $_POST['rol'] <> '' and $_POST['onderwerp'] <> '' and $_POST['competentie'] <> '' and $_POST['wat'] <> '' and $_POST['why'] <> '' and $_POST['how'] <> ''  and $_POST['bronnen'] <> '' and $_POST['niveau'] <> '' and $_POST['studieduur'] <> '' and $_POST['rating'] <> ''
     ) {
 
         echo "stap2";
@@ -106,22 +106,6 @@ if (
       $competentie .= $competentie1.",";  
    } 
 
-   $name = $_FILES['plaatje']['name'];
-  $target_dir = "upload/";
-  $target_file = $target_dir . basename($_FILES["plaatje"]["name"]);
-
-  // Select file type
-  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-  // Valid file extensions
-  $extensions_arr = array("jpg","jpeg","png","gif");
-
-  // Check extension
-  if( in_array($imageFileType,$extensions_arr) ){
- 
-    // Convert to base64 
-    $image_base64 = base64_encode(file_get_contents($_FILES['plaatje']['tmp_name']) );
-    $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
   }
 
 try {
@@ -138,7 +122,7 @@ try {
 catch (PDOException $e){
 	echo $e->getMessage();
 }
-}
+
 
 $sql_get_kaart = "SELECT onderwerp, rol, competentie, wat, why, how, plaatje, bronnen, niveau, studieduur, rating FROM sch_map.kenniskaart ORDER BY onderwerp;";
 
@@ -177,8 +161,8 @@ try {
                 <textarea class="invulveld" id="why" name="why" required></textarea>
                 <label class="label"class="label"for = "how">How:</label>
                 <textarea class="invulveld" id="how" name="how" required></textarea>
-                <label class="label"for = "plaatje">Plaatje:</label>
-                <input class="invulveld" type="file" name="plaatje" required />
+                <label class="label"for = "plaatje">Plaatje: (zet bron van plaatje hier)</label>
+                <input class="invulveld" type="text" name="plaatje" required />
                 <label class="label"for = "niveau">Niveau:</label><br>
                 <div class="niveau_block" required>
                     <input class="invulbox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">

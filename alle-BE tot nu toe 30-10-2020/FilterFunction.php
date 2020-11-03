@@ -12,7 +12,7 @@ if(!empty($_POST["search"])) {
     foreach($_POST["search"] as $k=>$v){
         if(!empty($v)) {
 
-            $queryCases = array("onderwerp","wat", "why", "how", "niveau");
+            $queryCases = array("onderwerp","wat", "why", "how", "niveau", "competentie", "rol");
             if(in_array($k,$queryCases)) {
                 if(!empty($queryCondition)) {
                     $queryCondition .= " AND ";
@@ -40,6 +40,15 @@ if(!empty($_POST["search"])) {
 				case "niveau":
 					$niveau = $v;
 					$queryCondition .= "niveau LIKE '" . $v . "%'";
+					break;
+				case "competentie":
+					$competentie = $v;
+					$queryCondition .= "competentie LIKE '" . $v . "%'";
+					break;	
+				case "rol":
+					$rol = $v;
+					$queryCondition .= "rol LIKE '" . $v . "%'";
+				break;
             }
         }
     }
@@ -79,6 +88,26 @@ if(!empty($_POST["search"])) {
                         ?>
                 	</select><br> <br>
 
+					<select id="Place" name="search[competentie]" multiple="multiple">
+                        <?php
+                        if (! empty($result)) {
+                            foreach ($result as $k => $v) {
+                                echo '<option value="' . $result[$k]['competentie'] . '">' . $result[$k]['competentie'] . '</option>';
+                            }
+                        }
+                        ?>
+                	</select><br> <br>
+
+					<select id="Place" name="search[rol]" multiple="multiple">
+                        <?php
+                        if (! empty($result)) {
+                            foreach ($result as $k => $v) {
+                                echo '<option value="' . $result[$k]['rol'] . '">' . $result[$k]['rol'] . '</option>';
+                            }
+                        }
+                        ?>
+                	</select><br> <br>
+
 					<input type="submit" name="go" class="btnSearch" value="Search">
 					<input type="reset" class="btnSearch" value="Reset" onclick="window.location='filterfunction.php'">
 
@@ -106,8 +135,9 @@ if(!empty($_POST["search"])) {
 				<?php
                         $query = "SELECT * from sch_map.kenniskaart";
                         $i = 0;
-                        $selectedOptionCount = count($_POST['niveau']);
-                        $selectedOption = "";
+						$selectedOptionCount = count($_POST['niveau']);
+						$selectedOption = "";
+
                         while ($i < $selectedOptionCount) {
                             $selectedOption = $selectedOption . "'" . $_POST['niveau'][$i] . "'";
                             if ($i < $selectedOptionCount - 1) {
@@ -115,11 +145,53 @@ if(!empty($_POST["search"])) {
                             }
                             
                             $i ++;
-                        }
-                        $query = $query . " WHERE niveau in (" . $selectedOption . ")";
+						}
+
+						$query = $query . " WHERE niveau in (" . $selectedOption . ")";
                         
                         $result = $db_handle->runQuery($query);
-                    }
+					}
+					
+					if (! empty($_POST['competentie'])) {
+
+						$query = "SELECT * from sch_map.kenniskaart";
+                        $i = 0;
+						$selectedOptionCount2 = count($_POST['competentie']);
+						$selectedOption2 = "";
+
+						while ($i < $selectedOptionCount2) {
+                            $selectedOption2 = $selectedOption2 . "'" . $_POST['competentie'][$i] . "'";
+                            if ($i < $selectedOptionCount2 - 1) {
+                                $selectedOption2 = $selectedOption2 . ", ";
+                            }
+                            
+                            $i ++;
+						}
+						$query = $query . " WHERE competentie in (" . $selectedOption2 . ")";
+                        
+                        $result = $db_handle->runQuery($query);
+					}
+
+					if (! empty($_POST['rol'])) {
+
+						$query = "SELECT * from sch_map.kenniskaart";
+                        $i = 0;
+						$selectedOptionCount3 = count($_POST['rol']);
+						$selectedOption3 = "";
+
+						while ($i < $selectedOptionCount3) {
+                            $selectedOption3 = $selectedOption3 . "'" . $_POST['rol'][$i] . "'";
+                            if ($i < $selectedOptionCount3 - 1) {
+                                $selectedOption3 = $selectedOption3 . ", ";
+                            }
+                            
+                            $i ++;
+						}
+						$query = $query . " WHERE rol in (" . $selectedOption3 . ")";
+                        
+                        $result = $db_handle->runQuery($query);
+					}
+
                     if (! empty($result)) {
                         foreach ($result as $k => $v) {
 							if(is_numeric($k)) {
