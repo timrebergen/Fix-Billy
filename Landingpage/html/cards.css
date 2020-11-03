@@ -1,0 +1,65 @@
+#contentMain{
+    margin-top: 25px;
+    grid-template-columns: 1fr .1fr;
+    grid-gap: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    bottom: 0;
+    display: grid;
+  }
+
+  #Recommended{
+    margin-left: 10%; 
+  }
+  
+  #Uploaded{
+    margin-right: 60%;
+  }
+
+  .cardListRecommended, .cardListUploaded{
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    max-width: 35%;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name image'
+        'house image';
+    text-align: left;
+    min-width: 5%;
+    max-width: 35%;
+    margin-top: 50px;
+  }
+
+
+  .cardListRecommended > h2 {
+    grid-area: name;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    min-width: 50%;
+  }
+
+  .cardListRecommended > p {
+    grid-area: house;
+    margin: 0;
+    margin-top: 18px;
+    min-width: 50%;
+  }
+
+  .cardListRecommended > button{
+    color: #1AA1E1;
+    border-radius: 5px;
+    border-style: none;
+    background-color: transparent;
+    font-weight: bolder;
+    display: table-cell;
+    vertical-align: bottom;
+  }
+
+  .cardListRecommended > button:hover{
+    background-color:#1AA1E1;
+    color: white;
+    border-radius: 5px;
+  } 

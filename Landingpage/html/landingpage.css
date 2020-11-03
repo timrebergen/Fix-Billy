@@ -1,0 +1,55 @@
+.Container{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  bottom: 0;
+  
+}
+
+.Container img{
+  position: fixed;
+  margin: 5px;
+  min-width: 2.5%;
+  min-height: 5%;
+}
+
+#Header{
+  position: relative;
+  height: 90px;
+  width: 100%;
+  overflow-y: hidden;
+  background-color: #ffffff;
+  border-bottom: 1px solid #1AA1E1;
+}
+
+
+
+Header #Title{
+  font-size: 26px;
+  font-weight: bold;
+  position: absolute;
+  color: #1AA1E1;
+  left: 10%;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+Header #searchBar{
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+  width: 350px;
+  height: 50%;
+  text-align: center;
+}
+
+#searchWrapper {
+  position: relative;
+}
+
+#Rol, #Comp{
+  transform: translateY(50%);
+  margin-left: 70%;
+  font-size: 20px;
+}
