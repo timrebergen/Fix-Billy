@@ -1,5 +1,5 @@
 <?php
-require_once(".\search\dbcontroller.php");
+require_once(".\dbcontroller.php");
 $db_handle = new DBController();
 
 $onderwerp = "";

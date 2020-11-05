@@ -7,7 +7,7 @@ class DBController {
 	}
 	
 	function connectDB() {
-		$conn = pg_connect("host=localhost dbname=EBilly user=postgres password=WelKom7993");
+		$conn = pg_connect("host=localhost dbname=postgres user=postgres password=WelKom7993");
 		return $conn;
 	}
 	
