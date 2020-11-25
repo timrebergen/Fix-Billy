@@ -154,7 +154,7 @@ try {
 <html>
     <head>
         <title>Billy</title>
-        <link href="styles.css" rel="stylesheet">
+        <link href="AddStyle.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     </head>
     <body>
