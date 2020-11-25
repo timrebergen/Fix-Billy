@@ -73,23 +73,21 @@ class Connection {
     }
 }
 
-echo "stap1";
+#echo "stap1";
 
-$drivers = PDO::getAvailableDrivers ();
-    echo '<pre>' . print_r ($drivers, true) . '</pre>';
 // 
 if ( 
     isset($_POST['opslaan']) 
-    and $_POST['plaatje']['name'] <> '' and $_POST['rol'] <> '' and $_POST['onderwerp'] <> '' and $_POST['competentie'] <> '' and $_POST['wat'] <> '' and $_POST['why'] <> '' and $_POST['how'] <> ''  and $_POST['bronnen'] <> '' and $_POST['niveau'] <> '' and $_POST['studieduur'] <> '' and $_POST['rating'] <> ''
+    and $_POST['plaatje'] <> "" and $_POST['rol'] <> "" and $_POST['onderwerp'] <> "" and $_POST['competentie'] <> "" and $_POST['wat'] <> "" and $_POST['why'] <> "" and $_POST['how'] <> ""  and $_POST['bronnen'] <> "" and $_POST['niveau'] <> "" and $_POST['studieduur'] <> "" and $_POST['rating'] <> ""
     ) {
 
-        echo "stap2";
+       # echo "stap2";
 
     $checkbox1=$_POST['niveau'];
-    $chk="";  
-    foreach($checkbox1 as $chk1)  
+    $niveau="";  
+    foreach($checkbox1 as $niveau1)  
    {  
-      $chk .= $chk1."";  
+      $niveau .= $niveau1."";  
    } 
 
    $checkbox2=$_POST['rol'];
@@ -106,12 +104,23 @@ if (
       $competentie .= $competentie1.",";  
    } 
 
+//    $_POST['plaatje'] = "";
+//    $_POST['onderwerp'] = '';
+//    $_POST['wat'] = '';
+//    $_POST['why'] = '';
+//    $_POST['how'] = '';
+//    $_POST['bronnen'] = '';
+//    $_POST['studieduur'] = '';
+//    $_POST['rating'] = '';
+//    $niveau = '';
+//    $rol = '';
+//    $competentie ='';
   }
 
 try {
 	$pdo = Connection::get()->connect();
     // 
-    $sql_insert_naam = "INSERT INTO sch_map.kenniskaart(onderwerp, rol, competentie, wat, why, how, plaatje, bronnen, niveau, studieduur, rating) VALUES ('$_POST[onderwerp]', '$rol', '$competentie', '$_POST[wat]', '$_POST[why]', '$_POST[how]', '$image', '$_POST[bronnen]', '$chk', '$_POST[studieduur]', '$_POST[rating]')";
+    $sql_insert_naam = "INSERT INTO sch_map.kenniskaart(onderwerp, rol, competentie, wat, why, how, plaatje, bronnen, niveau, studieduur, rating) VALUES ('$_POST[onderwerp]', '$rol', '$competentie', '$_POST[wat]', '$_POST[why]', '$_POST[how]', '$_POST[plaatje]', '$_POST[bronnen]', '$niveau', '$_POST[studieduur]', '$_POST[rating]')";
     
     $stmt = $pdo->query($sql_insert_naam);
 
@@ -139,7 +148,6 @@ try {
 }catch (PDOException $e){
 	echo $e->getMessage();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -162,7 +170,7 @@ try {
                 <label class="label"class="label"for = "how">How:</label>
                 <textarea class="invulveld" id="how" name="how" required></textarea>
                 <label class="label"for = "plaatje">Plaatje: (zet bron van plaatje hier)</label>
-                <input class="invulveld" type="text" name="plaatje" required />
+                <textarea class="invulveld" id="plaatje" name="plaatje" required></textarea>
                 <label class="label"for = "niveau">Niveau:</label><br>
                 <div class="niveau_block" required>
                     <input class="invulbox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
