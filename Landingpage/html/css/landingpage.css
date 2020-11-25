@@ -48,7 +48,7 @@
   margin-right: 5%;
 }
 
-.Add{
+button.Add{
   width: 75px;
   height: 40px;
   margin: auto;
@@ -65,7 +65,7 @@
   padding: 5px;
 }
 
-.add:hover{
+button.add-1:hover{
   background-color: #1AA1E1;
   color: white;
   border-radius: 5px;
