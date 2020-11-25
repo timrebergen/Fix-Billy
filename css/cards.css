@@ -1,0 +1,103 @@
+#contentMain{
+    margin-top: 25px;
+    grid-template-columns: 1fr 1fr;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    bottom: 0;
+    display: grid;
+    grid-gap: 15%;
+    padding: 25px;
+  }
+
+  .cardListRecommended{
+    float: left;
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+    'Name'
+    'What';
+    min-width: 70%;
+    max-width: 70%;
+    margin-top: 30px;
+    padding: 15px;
+  }
+
+  .cardListUploaded{
+    float: right;
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+    'Name'
+    'What';
+    max-width: 70%;
+    margin-top: 30px;
+    padding: 15px;
+  }
+
+  .cardListRecommended > h1 {
+    font-size: 16px;
+  }
+
+  .cardListRecommended > h2 {
+    float: right;
+    grid-area: Name;
+    font-size: 18px;
+  }
+
+  .cardListRecommended > p {
+    grid-area: What;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .cardListRecommended > button{
+    color: #1AA1E1;
+    padding: 12px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: transparent;
+    font-weight: bolder;
+    display: table-cell;
+    vertical-align: bottom;
+  }
+
+  .cardListRecommended > button:hover{
+    background-color:#1AA1E1;
+    color: white;
+    border-radius: 5px;
+  }
+
+
+
+  .cardListUploaded > h2 {
+    grid-area: Name;
+    margin-top: 5px;
+  }
+
+  .cardListUploaded > p {
+    grid-area: What;
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  .cardListUploaded > button{
+    color: #1AA1E1;
+    border-radius: 5px;
+    border-style: none;
+    background-color: transparent;
+    font-weight: bolder;
+    display: table-cell;
+    vertical-align: bottom;
+  }
+  .cardListUploaded > button:hover{
+    background-color:#1AA1E1;
+    color: white;
+    border-radius: 5px;
+  }

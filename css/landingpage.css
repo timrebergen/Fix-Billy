@@ -1,0 +1,70 @@
+.Container{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  bottom: 0;
+  
+}
+
+#logoHU{
+  min-width: 2.5%;
+  min-height: 5%;
+  padding: 15px;
+}
+
+.Header{
+  position: relative;
+  width: 100%;
+  background-color: #e7e7e7;
+  border-bottom: 4px solid #1AA1E1;
+  overflow-x: hidden;
+}
+
+ #Title{
+  font-size: 26px;
+  font-weight: bold;
+  position: absolute;
+  color: #1AA1E1;
+  left: 10%;
+  top: 40%;
+}
+
+#searchBar{
+  position: relative;
+  float: left;
+  left: 25%;
+  transform: translateY(-55%);
+  border-radius: 3px;
+  min-width: 25%;
+  margin-right: 30%;
+  padding: 0.5%;
+  font-size: 25px;
+}
+
+
+#Values{
+  transform: translateY(-50%);
+  float: right;
+  font-size: 20px;
+  margin-right: 5%;
+}
+
+
+@media screen and (max-width:200px){
+  #container {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+
+
+@media (max-width: 65em) {
+  #logoHU, #Title {
+  visibility: hidden;
+  }
+}
+
+@media (max-width: 65em) {
+  #Values {
+    float: left;
+  }
+}
