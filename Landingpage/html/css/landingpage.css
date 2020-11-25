@@ -48,6 +48,19 @@
   margin-right: 5%;
 }
 
+.Add{
+  width: 75px;
+  height: 40px;
+  margin: auto;
+  position: absolute;
+  left: 75%;
+  top: 40%;
+  margin-right: 10%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.
 
 @media screen and (max-width:200px){
   #container {
