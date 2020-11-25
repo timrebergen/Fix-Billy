@@ -4,24 +4,67 @@
     <title>Landingpage Billy v.01</title>
     <link rel="stylesheet" type="text/css" href="css/landingpage.css"/>
     <link rel="stylesheet" type="text/css" href="css/cards.css"/>
+    <link rel="stylesheet" type="text/css" href="css/modal.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<style>
+* {
+  box-sizing: content-box;
+}
+@media only screen and (min-width: 768px) {
+    /* Voor computers: */
+    .Header-1 {width: 8.33%;}
+    .Header-2 {width: 16.66%;}
+    .Header-3 {width: 25%;}
+    .Header-4 {width: 33.33%;}
+    .Header-5 {width: 41.66%;}
+    .Header-6 {width: 50%;}
+    .Header-7 {width: 58.33%;}
+    .Header-8 {width: 66.66%;}
+    .Header-9 {width: 75%;}
+    .Header-10 {width: 83.33%;}
+    .Header-11 {width: 91.66%;}
+    .Header-12 {width: 100%;}
+  }
 
+  @media only screen and (min-width: 772px) {
+    /* Voor tablets: */
+    .Header-s-1 {width: 8.33%;}
+    .Header-s-2 {width: 16.66%;}
+    .Header-s-3 {width: 25%;}
+    .Header-s-4 {width: 33.33%;}
+    .Header-s-5 {width: 41.66%;}
+    .Header-s-6 {width: 50%;}
+    .Header-s-7 {width: 58.33%;}
+    .Header-s-8 {width: 66.66%;}
+    .Header-s-9 {width: 75%;}
+    .Header-s-10 {width: 83.33%;}
+    .Header-s-11 {width: 91.66%;}
+    .Header-s-12 {width: 100%;}
+  }
+
+/* Voor mobile: */
+[class*="Header-"] {
+  width: 100%;
+}
+
+</style>
 
 <body>
 <header class="Container">
-    <div id="Header">
+    <div class="Header">
         <img src="css/hu_logo.png" class="Logo" id="logoHU" style="width:75px; height:55px">
         <h1 id="Title">BILLY</h1>
         <div id="Searchwrapper">
-        <input 
+        <input
+            style="font-size: 1.vw" 
             type="text" 
             name="searchBar"
             id="searchBar" 
             placeholder="Zoeken...bijv. 'Customer Journey"
             />
     </div>
-        <div id="Rol">
+        <div class="form" id="Values">
             <form>
                 <label for="Comp-select">Kies je Niveau:</label>
                 <select name="select" id="select">
@@ -41,22 +84,30 @@
                 </select>
             </form>
         </div>
-        <div id="Maker">
-            
-        </div>
     </div>
 </Header>
 
 <section id="contentMain">
-    <aside class="text" id="Recommended">
+    <aside class="Uploaded-4 Uploaded-s-9">
         <h1>Aanbevolen</h1>
         <ul id="cardListRecommended"></ul>
     </aside>
-    <aside class="text" id="Uploaded">
+    <aside class="Uploaded-3 Uploaded-s-12">
         <h1>Geüpload</h1>
         <ul id="cardListUploaded"></ul>
     </aside>
 </section>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+  
+  </div>
 
 <script src="js/app.js"></script>
 
