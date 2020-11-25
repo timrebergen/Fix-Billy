@@ -45,15 +45,15 @@
   }
 
 /* Voor mobile: */
-[class*="Header-"] {
-  width: 100%;
+[class*="Header"] {
+  min-width: 100%;
 }
 
 </style>
 
 <body>
 <header class="Container">
-    <div class="Header">
+    <div id="Header" class="Header-4 Header-s-3" style="min-width: 100%; max-width: 100%; height: auto;">
         <img src="css/hu_logo.png" class="Logo" id="logoHU" style="width:75px; height:55px">
         <h1 id="Title">BILLY</h1>
         <div id="Searchwrapper">
@@ -62,7 +62,7 @@
             type="text" 
             name="searchBar"
             id="searchBar" 
-            placeholder="Zoeken...bijv. 'Customer Journey"
+            placeholder="Zoeken..."
             />
     </div>
         <div class="form" id="Values">
@@ -85,7 +85,7 @@
                 </select>
             </form>
         </div>
-        <div id="Add">
+        <div class="button" id="Add">
             <a href="PHP/data_frontend.php">
                 <button class="Add add-1">
                     Toevoegen
@@ -95,14 +95,14 @@
     </div>
 </Header>
 
-<section id="contentMain">
-    <aside class="Uploaded-4 Uploaded-s-9">
+<section id="contentMain" style="max-width: 100%; min-width: 5%;">
+    <aside class="list" id="recommendedContainer">
         <h1>Aanbevolen</h1>
-        <ul id="cardListRecommended"></ul>
+        <ul id="cardListRecommended" style="min-width: 100%; max-width: 100%; height: auto;"></ul>
     </aside>
-    <aside class="Uploaded-3 Uploaded-s-12">
+    <aside class="list" id="uploadedContainer">
         <h1>Geüpload</h1>
-        <ul id="cardListUploaded"></ul>
+        <ul id="cardListUploaded" style="min-width: 100%; max-width: 100%; height: auto;"></ul>
     </aside>
 </section>
 

@@ -1,13 +1,17 @@
 #contentMain{
-    margin-top: 25px;
     grid-template-columns: 1fr 1fr;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100%;
-    bottom: 0;
     display: grid;
     grid-gap: 15%;
     padding: 25px;
   }
+
+
+  #recommendedContainer,#uploadedContainer{
+    margin-top: 185px;
+  }
+
 
   .cardListRecommended{
     float: left;
@@ -21,7 +25,7 @@
     'What';
     min-width: 70%;
     max-width: 70%;
-    margin-top: 30px;
+    margin-top: 15px;
     padding: 15px;
   }
 
@@ -35,12 +39,18 @@
     grid-template-areas:
     'Name'
     'What';
+    min-width: 70%;
     max-width: 70%;
-    margin-top: 30px;
+    margin-top: 15px;
     padding: 15px;
   }
 
-  .cardListRecommended > h1 {
+  #recommendedContainer h1, #uploadedContainer h1{
+    vertical-align: top;
+;
+  }
+
+  .cardListRecommended> h1 {
     font-size: 16px;
   }
 
@@ -59,13 +69,14 @@
   .cardListRecommended > button{
     color: #1AA1E1;
     padding: 12px;
-    border-radius: 5px;
     border-style: solid;
     border-width: 2px;
     background-color: transparent;
     font-weight: bolder;
+    transition-duration: 0.5s;
     display: table-cell;
     vertical-align: bottom;
+    border: 2px solid #1AA1E1;
   }
 
   .cardListRecommended > button:hover{
@@ -73,7 +84,6 @@
     color: white;
     border-radius: 5px;
   }
-
 
 
   .cardListUploaded > h2 {
@@ -101,3 +111,10 @@
     color: white;
     border-radius: 5px;
   }
+
+  @media (max-width: 85em) {
+    #contentMain{
+      grid-gap: 1%;
+      margin-left: 0px;
+  }
+}
