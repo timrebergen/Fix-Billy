@@ -51,10 +51,9 @@
 button.Add{
   width: 75px;
   height: 40px;
-  margin: auto;
   text-align: center;
   position: absolute;
-  left: 75%;
+  left: 55%;
   top: 40%;
   margin-right: 10%;
   transition-duration: 0.5s;
