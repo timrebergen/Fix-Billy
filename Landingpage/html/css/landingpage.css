@@ -1,3 +1,4 @@
+
 .Container{
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100%;
@@ -10,7 +11,7 @@
 }
 
 #Header{
-  position: fixed;
+  position: absolute;
   background-color: #e7e7e7;
   border-bottom: 4px solid #1AA1E1;
   overflow-x: hidden;
@@ -27,9 +28,11 @@
 }
 
 #searchBar{
-  position: relative;
+  position: absolute;
   left: 25%;
   border-radius: 3px;
+  transition-duration: 0.5s;
+  transform: translateY(-50%);
   margin-right: 30%;
   padding: 0.5%;
   font-size: 25px;
@@ -37,10 +40,11 @@
 
 
 #Values{
+  position: relative;
+  transition-duration: 0.5s;
   transform: translateY(-50%);
-  float: right;
+  left: 75%;
   font-size: 20px;
-  margin-right: 15%;
 }
 
 button.Add{
@@ -67,8 +71,7 @@ button.add-1:hover{
 
 @media (max-width: 65em) {
   #searchBar {
-    top: 15%;
-    position: absolute;
+    transform: translateY(-185%);
   }
 }
 
@@ -81,9 +84,17 @@ button.add-1:hover{
 
 @media (max-width: 85em) {
   button.Add{
-    left: 1%;
+    left: 0%;
     top: 15%;
-    float: right;
-    margin-left: 5px;
+    margin-left: 10px;
+  }
+}
+
+
+@media (max-width: 65em) {
+  #Values{
+    left: 25%;
+    top: 15%;
+    margin-left: 10px;
   }
 }
