@@ -161,4 +161,6 @@ catch(PDOException $error)
 	}
 }
 
+$buglevel=1;
+
 ?>

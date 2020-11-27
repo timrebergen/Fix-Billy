@@ -1,9 +1,8 @@
- body {
-    background-image: url("boekenkast1.jpg");
+body {
+    background-image: url(boekenkast1.jpg);
 }
 
-span 
-{
+span {
     border: solid 1px black;
 }
 
@@ -38,6 +37,7 @@ background-color: lightcoral;
     margin-top: -25%;
     padding: 5px;
     border-radius: 25px;
+    z-index: 2;
 }
 
 .button2 {
