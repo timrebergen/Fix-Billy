@@ -152,20 +152,32 @@ try {
 	echo $e->getMessage();
 }
 
-error_reporting == false;
-
-// if ($BugLevel == 1){
-//     echo "step 1";
-// }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<script>
+function validateForm() {
+    let elemlength = document.getElementById('invulveld').value.length;
+    if (elemlength > 150) {
+        alert("De beschrijving mag niet langer dan 150 karakters zijn");
+        return false;
+    } else {
+        post_description()
+        return true;
+    }
+}
+</script>
+
 <style>
 * {
   box-sizing: border-box;
+
 }
 .container {
   border-radius: 5px;
@@ -178,6 +190,10 @@ error_reporting == false;
   left: 15%;
 }
 
+html{
+  background-image: url(css/Showcase_back_main.png);
+  width: 75%;
+}
 
 #invulveld:focus {
 	position: relative;
@@ -239,22 +255,26 @@ input[type=submit]:hover {
   transition-duration: 0.5s;
 }
 
-.bottomline{
-    border-bottom: 5px solid red;
-}
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.HBO-block{
+
+.HBO-block, .skill, .rol  {
     margin-top: 15px;
     border-style: solid;
     border-radius: 5px;
     border-width: 2px;
     padding: 10px;
     border-color: #1AA1E1;
+}
+
+#invulveld{
+  border-right-style: solid;
+  border-color: #1AA1E1;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
@@ -266,14 +286,13 @@ input[type=submit]:hover {
     margin-right: 0px;
   }
 }
-
 </style>
 </head>
 <body>
 
 <section class="container">
     <aside id="what-why-how-picture">
-        <form action0="<!--nognietingevuld--!>"></form>
+        <form name="myForm" onsubmit="return validateForm()" method="post">
             <div class="row">
               <div class="column-25">
                 <label for="invulveld">Onderwerp</label>
@@ -305,7 +324,6 @@ input[type=submit]:hover {
                 <textarea id="invulveld" name="subject" placeholder="Hoe wordt het toegepast (How)?" style="height:100px"></textarea>
               </div>
             </div>
-        
             <div class="row">
                 <div class="column-25">
                   <label for="plaatje" id="plaatje">Upload afbeelding</label>
@@ -314,9 +332,38 @@ input[type=submit]:hover {
                   <textarea id="invulveld" name="subject" placeholder="Bronnen" style="height:100px"></textarea>
                 </div>
               </div>
-    </aside>
-  
-
+      <h1>Kies je niveau</h1>
+      <aside class="skill">
+        <div class="niveau_block" required>
+          <input class="invulbox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
+          <label class="checkbox"for ="niveau1">Beginner</label><br>
+          <input class="invulbox" type = "checkbox" id="niveau2" name = "niveau[]" value="Gevorderde">
+          <label class="checkbox"for ="niveau2">Gevorderde</label><br>
+          <input class="invulbox" type = "checkbox" id="niveau3" name = "niveau[]" value="Expert">
+          <label class="checkbox"for ="niveau3">Expert</label><br>
+          <script type="text/javascript">
+              $('.invulbox').on('change', function() {
+                  $('.invulbox').not(this).prop('checked', false);  
+              });
+          </script>
+      </aside>
+      <h1>Kies je Rol</h1>
+      <aside class="rol">
+        <div class="check_block" required>
+          <input class="invulbox2" type = "checkbox" id="rol1" name = "rol[]" value="FE">
+          <label class="checkbox2"for ="niveau1">FE</label><br>
+          <input class="invulbox2" type = "checkbox" id="rol2" name = "rol[]" value="BE">
+          <label class="checkbox2"for ="niveau2">BE</label><br>
+          <input class="invulbox2" type = "checkbox" id="rol3" name = "rol[]" value="AI">
+          <label class="checkbox2"for ="niveau3">AI</label><br>
+          <input class="invulbox2" type = "checkbox" id="rol4" name = "rol[]" value="PO">
+          <label class="checkbox2"for ="niveau1">PO</label><br>
+          <input class="invulbox2" type = "checkbox" id="rol5" name = "rol[]" value="CSC">
+          <label class="checkbox2"for ="niveau2">CSC</label><br>
+          <input class="invulbox2" type = "checkbox" id="rol6" name = "rol[]" value="UX Designer">
+          <label class="checkbox2"for ="niveau3">UX Designer</label><br>
+        </div>
+      </aside>
       <aside class="HBO-I" required>
         <h1 class="HBO-title">Gebruikersinteractie</h1>
           <div class="HBO-block" id="gebruikersinteractie">
@@ -386,14 +433,13 @@ input[type=submit]:hover {
             <label class="checkbox3" for ="competentie24">Hardware interfacing Realiseren</label><br>
             <input class="invulbox3" type = "checkbox" id="competentie25" name="competentie[]" value="Hardware interfacing Manage & control">
             <label class="checkbox3" for ="competentie25">Hardware interfacing Manage & control</label><br>
+
+            <div class="button" type="button">
+              <input type="submit" type="submit" value="Kenniskaartje opslaan" name="save">
           </div>
+        </form>
+      </aside>
     </div>
-</aside>
-
-<div class="button" type="button">
-    <input type="submit" value="Kenniskaartje opslaan" name="opslaan" onclick="alert('Kenniskaart is opgeslagen')">
-</div>
-</form>
-
+  </section>
 </body>
 </html>
