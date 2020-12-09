@@ -4,7 +4,7 @@ class Database{
     // specify your own database credentials
     private $host = "localhost";
     private $port = "5432";
-    private $db_name = "EBilly";
+    private $db_name = "postgres";
     private $username = "postgres";
     private $password = "WelKom7993";
     public $conn;
