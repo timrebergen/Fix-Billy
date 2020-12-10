@@ -23,7 +23,7 @@ if($num>0){
   
     // products array
     $products_arr=array();
-  
+
     // retrieve our table contents
     // fetch() is faster than fetchAll()
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -47,7 +47,8 @@ if($num>0){
             "rating" => $rating,
             "bronnen" => $bronnen
         );
- 
+        
+        
         array_push($products_arr, $product_item);
     }
     

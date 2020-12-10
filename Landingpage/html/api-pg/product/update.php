@@ -22,9 +22,9 @@
     
   // set ID property of product to be edited
   $kenniskaart_id = ['kenniskaart_id'];
-    
+
   // set product property values
-  $update_item=array(
+  $update_item=json_encode([
     $onderwerp = ['onderwerp'],
     $wat = ['wat'],
     $why = ['why'],
@@ -36,9 +36,7 @@
     $studieduur = ['studieduur'],
     $rating = ['rating'],
     $bronnen = ['bronnen']
-  );
-
-  array_push($update_item);
+  ]);
 
   // update the product
   if($product->update()){
@@ -47,7 +45,7 @@
       http_response_code(200);
     
       // tell the user
-      echo $update_item(array("message" => "Product was updated."));
+      echo( $update_item(array("message" => "Product was updated.")));
   }
     
   // if unable to update the product, tell the user
@@ -55,7 +53,7 @@
     
       // set response code - 503 service unavailable
       http_response_code(503);
-    
+
       // tell the user
       echo json_encode(array("message" => "Unable to update product."));
   }
