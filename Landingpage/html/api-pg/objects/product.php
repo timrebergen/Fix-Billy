@@ -57,17 +57,17 @@ class Product{
         $stmt = $this->conn->prepare($query);
     
         // sanitize
-        $this->onderwerp=htmlspecialchars(strip_tags($this->onderwerp));
-        $this->wat=htmlspecialchars(strip_tags($this->wat));
-        $this->why=htmlspecialchars(strip_tags($this->why));
-        $this->how=htmlspecialchars(strip_tags($this->how));
-        $this->plaatje=htmlspecialchars(strip_tags($this->plaatje));
-        $this->niveau=htmlspecialchars(strip_tags($this->niveau));
-        $this->rol=htmlspecialchars(strip_tags($this->rol));
-        $this->competentie=htmlspecialchars(strip_tags($this->competentie));
-        $this->studieduur=htmlspecialchars(strip_tags($this->studieduur));
-        $this->rating=htmlspecialchars(strip_tags($this->rating));
-        $this->bronnen=htmlspecialchars(strip_tags($this->bronnen));
+        $this->onderwerp=htmlspecialchars($this->onderwerp);
+        $this->wat=htmlspecialchars($this->wat);
+        $this->why=htmlspecialchars($this->why);
+        $this->how=htmlspecialchars($this->how);
+        $this->plaatje=htmlspecialchars($this->plaatje);
+        $this->niveau=htmlspecialchars($this->niveau);
+        $this->rol=htmlspecialchars($this->rol);
+        $this->competentie=htmlspecialchars($this->competentie);
+        $this->studieduur=htmlspecialchars($this->studieduur);
+        $this->rating=htmlspecialchars($this->rating);
+        $this->bronnen=htmlspecialchars($this->bronnen);
     
         // bind values
         $stmt->bindParam(":onderwerp", $this->onderwerp);
@@ -136,7 +136,6 @@ class Product{
         $query = "UPDATE
                     " . $this->table_name . "
                 SET
-                    onderwerp = :onderwerp,
                     wat = :wat,
                     why = :why,
                     how = :how,
@@ -149,23 +148,23 @@ class Product{
                     bronnen = :bronnen
 
                 WHERE
-                    kenniskaart_id = :kenniskaart_id";
+                    onderwerp = :onderwerp";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
     
         // sanitize
-        $this->onderwerp=htmlspecialchars(strip_tags($this->onderwerp));
-        $this->wat=htmlspecialchars(strip_tags($this->wat));
-        $this->why=htmlspecialchars(strip_tags($this->why));
-        $this->how=htmlspecialchars(strip_tags($this->how));
-        $this->plaatje=htmlspecialchars(strip_tags($this->plaatje));
-        $this->niveau=htmlspecialchars(strip_tags($this->niveau));
-        $this->rol=htmlspecialchars(strip_tags($this->rol));
-        $this->competentie=htmlspecialchars(strip_tags($this->competentie));
-        $this->studieduur=htmlspecialchars(strip_tags($this->studieduur));
-        $this->rating=htmlspecialchars(strip_tags($this->rating));
-        $this->bronnen=htmlspecialchars(strip_tags($this->bronnen));
+        $this->onderwerp=htmlspecialchars($this->onderwerp);
+        $this->wat=htmlspecialchars($this->wat);
+        $this->why=htmlspecialchars($this->why);
+        $this->how=htmlspecialchars($this->how);
+        $this->plaatje=htmlspecialchars($this->plaatje);
+        $this->niveau=htmlspecialchars($this->niveau);
+        $this->rol=htmlspecialchars($this->rol);
+        $this->competentie=htmlspecialchars($this->competentie);
+        $this->studieduur=htmlspecialchars($this->studieduur);
+        $this->rating=htmlspecialchars($this->rating);
+        $this->bronnen=htmlspecialchars($this->bronnen);
 
         // bind values
         $stmt->bindParam(":onderwerp", $this->onderwerp);
@@ -198,7 +197,7 @@ class Product{
         $stmt = $this->conn->prepare($query);
     
         // sanitize
-        $this->kenniskaart_id=htmlspecialchars(strip_tags($this->kenniskaart_id));
+        $this->kenniskaart_id=htmlspecialchars($this->kenniskaart_id);
     
         // bind id of record to delete
         $stmt->bindParam(1, $this->kenniskaart_id);
@@ -228,7 +227,7 @@ class Product{
         $stmt = $this->conn->prepare($query);
     
         // sanitize
-        $keywords=htmlspecialchars(strip_tags($keywords));
+        $keywords=htmlspecialchars($keywords);
         $keywords = "%{$keywords}%";
     
         // bind

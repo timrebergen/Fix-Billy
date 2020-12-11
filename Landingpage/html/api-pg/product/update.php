@@ -24,19 +24,17 @@
   $kenniskaart_id = ['kenniskaart_id'];
 
   // set product property values
-  $update_item=json_encode([
-    $onderwerp = ['onderwerp'],
-    $wat = ['wat'],
-    $why = ['why'],
-    $how = ['how'],
-    $plaatje = ['plaatje'],
-    $niveau = ['niveau'],
-    $rol = ['rol'],
-    $competentie = ['competentie'],
-    $studieduur = ['studieduur'],
-    $rating = ['rating'],
-    $bronnen = ['bronnen']
-  ]);
+    $onderwerp = ['onderwerp'];
+    $wat = ['wat'];
+    $why = ['why'];
+    $how = ['how'];
+    $plaatje = ['plaatje'];
+    $niveau = ['niveau'];
+    $rol = ['rol'];
+    $competentie = ['competentie'];
+    $studieduur = ['studieduur'];
+    $rating = ['rating'];
+    $bronnen = ['bronnen'];
 
   // update the product
   if($product->update()){
@@ -45,7 +43,7 @@
       http_response_code(200);
     
       // tell the user
-      echo $update_item("message" => "Product was updated.");
+      echo json_encode(array("message" => "Product was updated."));
   }
     
   // if unable to update the product, tell the user
@@ -55,6 +53,6 @@
       http_response_code(503);
 
       // tell the user
-      echo json_encode("message" => "Unable to update product.");
+      echo json_encode(array("message" => "Unable to update product."));
   }
 ?>
