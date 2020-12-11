@@ -24,18 +24,20 @@
   $kenniskaart_id = ['kenniskaart_id'];
 
   // set product property values
-    $onderwerp = ['onderwerp'];
-    $wat = ['wat'];
-    $why = ['why'];
-    $how = ['how'];
-    $plaatje = ['plaatje'];
-    $niveau = ['niveau'];
-    $rol = ['rol'];
-    $competentie = ['competentie'];
-    $studieduur = ['studieduur'];
-    $rating = ['rating'];
-    $bronnen = ['bronnen'];
-
+  $product = [
+    $onderwerp = ['onderwerp'],
+    $wat = ['wat'],
+    $why = ['why'],
+    $how = ['how'],
+    $plaatje = ['plaatje'],
+    $niveau = ['niveau'],
+    $rol = ['rol'],
+    $competentie = ['competentie'],
+    $studieduur = ['studieduur'],
+    $rating = ['rating'],
+    $bronnen = ['bronnen']
+  ];
+  
   // update the product
   if($product->update()){
     
@@ -43,6 +45,7 @@
       http_response_code(200);
     
       // tell the user
+      print_r ($product);
       echo json_encode(array("message" => "Product was updated."));
   }
     
