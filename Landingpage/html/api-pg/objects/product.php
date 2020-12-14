@@ -71,21 +71,23 @@ class Product{
 
         // query to insert record
         $query = "INSERT INTO
-                    " . $this->table_name . "
-                SET
-                    onderwerp = '$_POST[onderwerp]',
-                     rol = '$rol',
-                     competentie = '$competentie',
-                     wat = '$_POST[wat]',
-                     why = '$_POST[why]',
-                     how = '$_POST[how]',
-                     plaatje = '$_POST[plaatje]',
-                     bronnen = '$_POST[bronnen]',
-                     niveau = '$niveau',
-                     studieduur = '$_POST[studieduur]',
-                     rating = '$_POST[rating]'
-                     ";
-    
+                    " . $this->table_name . "(onderwerp, rol, competentie, wat, why, how, plaatje, bronnen, niveau, studieduur, rating)
+                VALUES(
+                    '$_POST[onderwerp]',
+                    '$rol',
+                    '$competentie',
+                    '$_POST[wat]',
+                    '$_POST[why]',
+                    '$_POST[how]',
+                    '$_POST[plaatje]',
+                    '$_POST[bronnen]',
+                    '$niveau',
+                    '$_POST[studieduur]',
+                    '$_POST[rating]'
+                     )";
+
+        echo $query;
+
         // prepare query
         $stmt = $this->conn->prepare($query);
     

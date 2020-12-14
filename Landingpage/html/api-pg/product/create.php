@@ -11,10 +11,12 @@ include_once '../config/database.php';
   
 // instantiate product object
 include_once '../objects/product.php';
-  
+
+// get database connection
 $database = new Database();
 $db = $database->getConnection();
-  
+
+// prepare product object
 $product = new Product($db);
   
 // get posted data
@@ -22,7 +24,6 @@ $data = json_decode(file_get_contents("php://input"));
   
 // make sure data is not empty
 if(
-    !empty($data->kenniskaarT_id) &&
     !empty($data->onderwerp) &&
     !empty($data->wat) &&
     !empty($data->why) &&
@@ -57,7 +58,7 @@ if(
   
         // tell the user
         echo json_encode(array("message" => "Product was created."));
-        header("Location:http://billy.hu-open-ict.nl/?status=success");//redirect to your html with status
+        //header("Location:http://billy.hu-open-ict.nl/?status=success");//redirect to your html with status
     }
   
     // if unable to create the product, tell the user
@@ -68,7 +69,7 @@ if(
   
         // tell the user
         echo json_encode(array("message" => "Unable to create product."));
-        header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure");//redirect to your html with status
+        //header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure");//redirect to your html with status
     }
 }
   
@@ -80,6 +81,6 @@ else{
   
     // tell the user
     echo json_encode(array("message" => "Unable to create product. Data is incomplete."));
-    header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure");//redirect to your html with status
+    //header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure");//redirect to your html with status
 }
 ?>

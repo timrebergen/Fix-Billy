@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="79cfaed1-b453-49b3-b37b-1086cb55739e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/PHP/aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/PHP/aanmaken.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/PHP/data_Frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/PHP/data_Frontend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartaanmaken/aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartaanmaken/aanmaken.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/objects/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/objects/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/product/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/product/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/product/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/product/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kenniskaart aanmaken/aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartaanmaken/aanmaken.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kenniskaart aanmaken/css/Showcase_back_main.png" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartaanmaken/css/Showcase_back_main.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607933427586</updated>
       <workItem from="1607933432368" duration="3241000" />
-      <workItem from="1607947837308" duration="6000000" />
+      <workItem from="1607947837308" duration="7367000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607933676848</created>
@@ -71,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607947177591</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1607954943240</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607954943240</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
