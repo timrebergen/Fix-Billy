@@ -46,12 +46,45 @@ class Product{
     
     // create product
     function create(){
-    
+
+        // makes niveau/rol/competentie multiple values
+        $checkbox1=$_POST['niveau'];
+        $niveau="";
+        foreach($checkbox1 as $niveau1)
+        {
+            $niveau .= $niveau1."";
+        }
+
+        $checkbox2=$_POST['rol'];
+        $rol="";
+        foreach($checkbox2 as $rol1)
+        {
+            $rol .= $rol1.",";
+        }
+
+        $checkbox3=$_POST['competentie'];
+        $competentie="";
+        foreach($checkbox3 as $competentie1)
+        {
+            $competentie .= $competentie1.",";
+        }
+
         // query to insert record
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    onderwerp=:onderwerp, wat=:wat, why=:why, how=:how, plaatje=:plaatje, niveau=:niveau, rol=:rol, competentie=:competentie, studieduur=:studieduur, rating=:rating, bronnen=:bronnen";
+                    onderwerp = '$_POST[onderwerp]',
+                     rol = '$rol',
+                     competentie = '$competentie',
+                     wat = '$_POST[wat]',
+                     why = '$_POST[why]',
+                     how = '$_POST[how]',
+                     plaatje = '$_POST[plaatje]',
+                     bronnen = '$_POST[bronnen]',
+                     niveau = '$niveau',
+                     studieduur = '$_POST[studieduur]',
+                     rating = '$_POST[rating]'
+                     ";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -68,19 +101,6 @@ class Product{
         $this->studieduur=htmlspecialchars($this->studieduur);
         $this->rating=htmlspecialchars($this->rating);
         $this->bronnen=htmlspecialchars($this->bronnen);
-    
-        // bind values
-        $stmt->bindParam(":onderwerp", $this->onderwerp);
-        $stmt->bindParam(":wat", $this->wat);
-        $stmt->bindParam(":why", $this->why);
-        $stmt->bindParam(":how", $this->how);
-        $stmt->bindParam(":plaatje", $this->plaatje);
-        $stmt->bindParam(":niveau", $this->niveau);
-        $stmt->bindParam(":rol", $this->rol);
-        $stmt->bindParam(":competentie", $this->competentie);
-        $stmt->bindParam(":studieduur", $this->studieduur);
-        $stmt->bindParam(":rating", $this->rating);
-        $stmt->bindParam(":bronnen", $this->bronnen);
     
         // execute query
         if($stmt->execute()){
@@ -131,22 +151,45 @@ class Product{
 
     // update the product
     function update(){
+
+        // makes niveau/rol/competentie multiple values
+        $checkbox1=$_POST['niveau'];
+        $niveau="";
+        foreach($checkbox1 as $niveau1)
+        {
+            $niveau .= $niveau1."";
+        }
+
+        $checkbox2=$_POST['rol'];
+        $rol="";
+        foreach($checkbox2 as $rol1)
+        {
+            $rol .= $rol1.",";
+        }
+
+        $checkbox3=$_POST['competentie'];
+        $competentie="";
+        foreach($checkbox3 as $competentie1)
+        {
+            $competentie .= $competentie1.",";
+        }
+
         // update query
         $query = "UPDATE " . $this->table_name . " 
                  SET 
                      onderwerp = '$_POST[onderwerp]',
-                     rol = '$_POST[rol]',
-                     competentie = '$_POST[competitie]',
+                     rol = '$rol',
+                     competentie = '$competentie',
                      wat = '$_POST[wat]',
                      why = '$_POST[why]',
                      how = '$_POST[how]',
                      plaatje = '$_POST[plaatje]',
                      bronnen = '$_POST[bronnen]',
-                     niveau = '$_POST[niveau]',
+                     niveau = '$niveau',
                      studieduur = '$_POST[studieduur]',
                      rating = '$_POST[rating]'
-                 WHERE kenniskaart_id = '$_POST[kenniskaart_id]' ";
-    
+                 WHERE onderwerp = '$_POST[onderwerp]' ";
+
         // prepare query statement
         echo $query;
         $stmt = $this->conn->prepare($query);
@@ -163,19 +206,6 @@ class Product{
         $this->studieduur=htmlspecialchars($this->studieduur);
         $this->rating=htmlspecialchars($this->rating);
         $this->bronnen=htmlspecialchars($this->bronnen);
-
-        // bind values
-        $stmt->bindParam(":onderwerp", $this->onderwerp);
-        $stmt->bindParam(":wat", $this->wat);
-        $stmt->bindParam(":why", $this->why);
-        $stmt->bindParam(":how", $this->how);
-        $stmt->bindParam(":plaatje", $this->plaatje);
-        $stmt->bindParam(":niveau", $this->niveau);
-        $stmt->bindParam(":rol", $this->rol);
-        $stmt->bindParam(":competentie", $this->competentie);
-        $stmt->bindParam(":studieduur", $this->studieduur);
-        $stmt->bindParam(":rating", $this->rating);
-        $stmt->bindParam(":bronnen", $this->bronnen);
 
         // execute the query
         if($stmt->execute()){

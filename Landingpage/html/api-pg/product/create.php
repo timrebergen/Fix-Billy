@@ -57,6 +57,7 @@ if(
   
         // tell the user
         echo json_encode(array("message" => "Product was created."));
+        header("Location:http://billy.hu-open-ict.nl/?status=success");//redirect to your html with status
     }
   
     // if unable to create the product, tell the user
@@ -67,6 +68,7 @@ if(
   
         // tell the user
         echo json_encode(array("message" => "Unable to create product."));
+        header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure");//redirect to your html with status
     }
 }
   
@@ -78,5 +80,6 @@ else{
   
     // tell the user
     echo json_encode(array("message" => "Unable to create product. Data is incomplete."));
+    header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure");//redirect to your html with status
 }
 ?>

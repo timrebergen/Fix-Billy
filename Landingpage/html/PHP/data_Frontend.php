@@ -411,19 +411,19 @@ input[type=submit]:hover {
               <input class="invulbox3" type = "checkbox" id="competentie15" name="competentie[]" value="Infrastructuur Manage & control">
               <label class="checkbox3" for ="competentie15">Infrastructuur Manage & control</label><br>
             </div>
-      
+
             <h1 class="HBO-title">Software</h1>
             <div class="HBO-block" id="Software">
-              <input class="invulbox3" type = "checkbox" id="competentie11" name="competentie[]" value="Infrastructuur Analyseren">
-              <label class="checkbox3" for ="competentie11">Infrastructuur Analyseren</label><br>
-              <input class="invulbox3" type = "checkbox" id="competentie12" name="competentie[]" value="Infrastructuur Adviseren">
-              <label class="checkbox3" for ="competentie12">Infrastructuur Adviseren</label><br>
-              <input class="invulbox3" type = "checkbox" id="competentie13" name="competentie[]" value="Infrastructuur Ontwerpen">
-              <label class="checkbox3" for ="competentie13">Infrastructuur Ontwerpen</label><br>
-              <input class="invulbox3" type = "checkbox" id="competentie14" name="competentie[]" value="Infrastructuur Realiseren">
-              <label class="checkbox3" for ="competentie14">Infrastructuur Realiseren</label><br>
-              <input class="invulbox3" type = "checkbox" id="competentie15" name="competentie[]" value="Infrastructuur Manage & control">
-              <label class="checkbox3" for ="competentie15">Infrastructuur Manage & control</label><br>
+                <input class="invulbox3" type = "checkbox" id="competentie16" name="competentie[]" value="Software Analyseren">
+                <label class="checkbox3" for ="competentie16">Software Analyseren</label><br>
+                <input class="invulbox3" type = "checkbox" id="competentie17" name="competentie[]" value="Software Adviseren">
+                <label class="checkbox3" for ="competentie17">Software Adviseren</label><br>
+                <input class="invulbox3" type = "checkbox" id="competentie18" name="competentie[]" value="Software Ontwerpen">
+                <label class="checkbox3" for ="competentie18">Software Ontwerpen</label><br>
+                <input class="invulbox3" type = "checkbox" id="competentie19" name="competentie[]" value="Software Realiseren">
+                <label class="checkbox3" for ="competentie19">Software Realiseren</label><br>
+                <input class="invulbox3" type = "checkbox" id="competentie20" name="competentie[]" value="Software Manage & control">
+                <label class="checkbox3" for ="competentie20">Software Manage & control</label><br>
             </div>
   
             <h1 class="HBO-title">Hardware Interfacing</h1>

@@ -68,8 +68,8 @@
     </div>
         <div class="form" id="Values">
             <form>
-                <label for="Comp-select">Kies je Niveau:</label>
-                <select name="select" id="select">
+                <label for="Niv-select">Kies je Niveau:</label>
+                <select name="select" id="Niv-select">
                 <option value="Beginner">Beginner</option>
                 <option value="Gevorded">Gevorded</option>
                 <option value="Expert">Expert</option>
@@ -77,7 +77,7 @@
             </form>
             <form>
                 <label for="Rol-select">Kies je Rol:</label>
-                <select name="select" id="select">
+                <select name="select" id="Rol-select">
                 <option value="Front-End">Front-End</option>
                 <option value="Back-End">Back-End</option>
                 <option value="A.I">A.I</option>
@@ -87,7 +87,7 @@
             </form>
         </div>
         <div class="button" id="Add">
-            <a href="PHP/data_frontend.php">
+            <a href="api-pg/kenniskaartaanmaken/aanmaken.html">
                 <button class="Add add-1">
                     Toevoegen
                 </button>
@@ -157,7 +157,7 @@ const displayRecommended = (Cards) => {
                 <img src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
                 <button id="readBtn">Lees meer</button>
                 <div class=button id="editBtnImage" src="css/pen.png" height= "40%">
-                    <a href="PHP/update2.php">bewerken</a>
+                    <a href="api-pg/kenniskaartbewerken/bewerken.html">bewerken</a>
                  </div>
             </ul>
 

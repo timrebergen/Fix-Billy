@@ -19,11 +19,10 @@
     
   // get id of product to be edited
   $data = json_decode(file_get_contents("php://input"));
-  echo  json_decode(file_get_contents("php://input"));
   
   // set ID property of product to be edited
-  $kenniskaart_id = $data->kenniskaart_id;
-echo  ' $data = '.print_r($data) ;
+  $product->onderwerp = $data->onderwerp;
+
   // set product property values
   $product->onderwerp = $data->onderwerp;
   $product->wat = $data->wat;
@@ -44,8 +43,8 @@ echo  ' $data = '.print_r($data) ;
       http_response_code(200);
     
       // tell the user
-      print_r ($product);
       echo json_encode(array("message" => "Product was updated."));
+      header("Location:http://billy.hu-open-ict.nl/?status=success");//redirect to your html with status
   }
     
   // if unable to update the product, tell the user
@@ -56,5 +55,6 @@ echo  ' $data = '.print_r($data) ;
 
       // tell the user
       echo json_encode(array("message" => "Unable to update product."));
+      header("Location:../kenniskaartbewerken/bewerken.html?status=failure");//redirect to your html with status
   }
 ?>
