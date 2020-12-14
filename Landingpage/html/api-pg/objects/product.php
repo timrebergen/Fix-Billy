@@ -132,10 +132,12 @@ class Product{
     // update the product
     function update(){
     
+        echo  $product->onderwerp.'<BR>';
         // update query
         $query = "UPDATE
                     " . $this->table_name . "
                 SET
+                onderwerp = ". $this->onderwerp.",
                     wat = :wat,
                     why = :why,
                     how = :how,
@@ -148,9 +150,10 @@ class Product{
                     bronnen = :bronnen
 
                 WHERE
-                    onderwerp = :onderwerp";
+                    kenniskaart_id = 13";
     
         // prepare query statement
+        echo $query;
         $stmt = $this->conn->prepare($query);
     
         // sanitize

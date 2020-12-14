@@ -19,25 +19,24 @@
     
   // get id of product to be edited
   $data = json_decode(file_get_contents("php://input"));
-    
-  // set ID property of product to be edited
-  $kenniskaart_id = ['kenniskaart_id'];
-
-  // set product property values
-  $product = [
-    $onderwerp = ['onderwerp'],
-    $wat = ['wat'],
-    $why = ['why'],
-    $how = ['how'],
-    $plaatje = ['plaatje'],
-    $niveau = ['niveau'],
-    $rol = ['rol'],
-    $competentie = ['competentie'],
-    $studieduur = ['studieduur'],
-    $rating = ['rating'],
-    $bronnen = ['bronnen']
-  ];
+  echo  json_decode(file_get_contents("php://input"));
   
+  // set ID property of product to be edited
+  $kenniskaart_id = $data->kenniskaart_id;
+echo  ' $data = '.print_r($data) ;
+  // set product property values
+  $product->onderwerp = $data->onderwerp;
+  $product->wat = $data->wat;
+  $product->why = $data->why;
+  $product->how = $data->how;
+  $product->plaatje = $data->plaatje;
+  $product->niveau = $data->niveau;
+  $product->rol = $data->rol;
+  $product->competentie = $data->competentie;
+  $product->studieduur = $data->studieduur;
+  $product->rating = $data->rating;
+  $product->bronnen = $data->bronnen;
+
   // update the product
   if($product->update()){
     
