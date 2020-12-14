@@ -131,26 +131,21 @@ class Product{
 
     // update the product
     function update(){
-    
-        echo  $product->onderwerp.'<BR>';
         // update query
-        $query = "UPDATE
-                    " . $this->table_name . "
-                SET
-                onderwerp = ". $this->onderwerp.",
-                    wat = :wat,
-                    why = :why,
-                    how = :how,
-                    plaatje = :plaatje,
-                    niveau = :niveau,
-                    rol = :rol,
-                    competentie = :competentie, 
-                    studieduur = :studieduur, 
-                    rating = :rating, 
-                    bronnen = :bronnen
-
-                WHERE
-                    kenniskaart_id = 13";
+        $query = "UPDATE " . $this->table_name . " 
+                 SET 
+                     onderwerp = '$_POST[onderwerp]',
+                     rol = '$_POST[rol]',
+                     competentie = '$_POST[competitie]',
+                     wat = '$_POST[wat]',
+                     why = '$_POST[why]',
+                     how = '$_POST[how]',
+                     plaatje = '$_POST[plaatje]',
+                     bronnen = '$_POST[bronnen]',
+                     niveau = '$_POST[niveau]',
+                     studieduur = '$_POST[studieduur]',
+                     rating = '$_POST[rating]'
+                 WHERE kenniskaart_id = '$_POST[kenniskaart_id]' ";
     
         // prepare query statement
         echo $query;
