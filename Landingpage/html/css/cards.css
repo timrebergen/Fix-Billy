@@ -8,25 +8,22 @@
     overflow-x: auto;
   }
 
-
-
-
   #recommendedContainer,#uploadedContainer{
     margin-top: 185px;
   }
-
 
   #recommendedTitle, #uploadedTitle{
     position: relative;
     left: 40px;
   }
+
   .cardListRecommended{
     float: left;
     list-style-type: none;
     background-color: #eaeaea;
     border-radius: 3px;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
     'Name' 
     'What';
@@ -35,8 +32,6 @@
     margin-top: 15px;
     padding: 15px;
   }
-
-
 
   #recommendedContainer h1, #uploadedContainer h1{
     vertical-align: top;
@@ -51,6 +46,23 @@
     left: 20%;
   }
 
+  #deleteBtnImage, #editBtnImage{
+    margin-left: 25px;
+  }
+#editBtnImage{
+  margin-left: 25px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  background-color: transparent;
+  margin-top: 35px;
+  padding: 5px;
+  border: 2px solid #1AA1E1;
+  }
+
+
+
+
   .cardListRecommended > h2 {
     float: right;
     grid-area: Name;
@@ -63,7 +75,7 @@
     margin-right: 5px;
   }
 
-  .cardListRecommended > #readBtn{
+  #readBtn{
     color: #1AA1E1;
     padding: 10px;
     border-style: solid;
@@ -77,33 +89,19 @@
     border: 2px solid #1AA1E1;
   }  
   
-  .cardListRecommended > #readBtn:hover{
+  #readBtn:hover{
     background-color:#1AA1E1;
     color: white;
     border-radius: 5px;
   }
 
-  .cardListRecommended > #editBtn{
-    position: relative;
-    left: 25%;
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 2px;
-    background-color: transparent;
-    margin-top: 35px;
-    padding: 5px;
-    border: 2px solid #1AA1E1;
-    }
-
-  .cardListRecommended > #srcImage {
+    #srcImage {
     position: relative;
     margin-top: 15px;
     left: 25%;
   }
 
-
-
-  .cardListRecommended > #srcImage {
+  #srcImage {
     position: relative;
     margin-top: 15px;
     left: 25%;
@@ -120,41 +118,6 @@
   transform: scale(6.45);
   -ms-transform: scale(6.45);
   -webkit-transform: scale(6.45);
-  }
-  .cardListRecommended > #editBtnImage{
-    margin-left: 25px;
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 2px;
-    background-color: transparent;
-    margin-top: 35px;
-    padding: 5px;
-    border: 2px solid #1AA1E1;
-    }
-  .cardListUploaded > h2 {
-    grid-area: Name;
-    margin-top: 5px;
-  }
-
-  .cardListUploaded > p {
-    grid-area: What;
-    margin: 0;
-    margin-top: 15px;
-  }
-
-  .cardListUploaded > button{
-    color: #1AA1E1;
-    border-radius: 5px;
-    border-style: none;
-    background-color: transparent;
-    font-weight: bolder;
-    display: table-cell;
-    vertical-align: bottom;
-  }
-  .cardListUploaded > button:hover{
-    background-color:#1AA1E1;
-    color: white;
-    border-radius: 5px;
   }
 
   @media (max-width: 85em) {

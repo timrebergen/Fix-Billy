@@ -156,9 +156,19 @@ const displayRecommended = (Cards) => {
                 <h1> ${Card.niveau}</h1>
                 <img src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
                 <button id="readBtn">Lees meer</button>
-                <div class=button id="editBtnImage" src="css/pen.png" height= "40%">
-                    <a href="api-pg/kenniskaartbewerken/bewerken.html">bewerken</a>
-                 </div>
+
+                <form class="inline-buttons">
+                    <a href="api-pg/kenniskaartbewerken/bewerken.html">
+                        <img type= "image" id="editBtnImage" src="css/pen.png" height= "30">
+                        </img>
+                    </a>
+                    <a href="api-pg/kenniskaartbewerken/bewerken.html">
+                        <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
+                        </img>
+                    </a>
+                </form>
+                </a>
+
             </ul>
 
             
