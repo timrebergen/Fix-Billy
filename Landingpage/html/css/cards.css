@@ -1,9 +1,9 @@
 #contentMain{
     grid-template-columns: 1fr 1fr;
-    display: grid;
-    grid-gap: 15%;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100%;
+    display: grid;
+    grid-gap: 15%;
     padding: 25px;
     overflow-x: auto;
   }
@@ -26,33 +26,22 @@
     background-color: #eaeaea;
     border-radius: 3px;
     display: grid;
-    
     grid-template-columns: 3fr 1fr;
     grid-template-areas:
-<<<<<<< HEAD
     'Name' 
-=======
-    'Name'
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
     'What';
     min-width: 80%;
     max-width: 80%;
     margin-top: 15px;
     padding: 15px;
   }
-<<<<<<< HEAD
-=======
 
-<<<<<<< Updated upstream
 
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
+  #recommendedContainer h1, #uploadedContainer h1{
+    vertical-align: top;
+;
+  }
 
   .cardListRecommended> h1 {
     position: relative;
@@ -114,13 +103,6 @@
 
 
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
   .cardListRecommended > #srcImage {
     position: relative;
     margin-top: 15px;
@@ -175,10 +157,6 @@
     border-radius: 5px;
   }
 
-<<<<<<< HEAD
-  @media (max-width: 45em) {
-    
-=======
   @media (max-width: 85em) {
     #contentMain{
       grid-gap: 10%;
@@ -186,39 +164,10 @@
   }
 
   @media (max-width:85em) {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
     #srcImage:hover{
       transform: scale(5.00);
       -ms-transform: scale(5.00);
       -webkit-transform: scale(5.00);
     }
-<<<<<<< Updated upstream
   }
 }
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    #contentMain {
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
-      padding: 0 0 12px 8px;
-      display : -ms-flexbox ;
-      display: flex; }
-    }
-  
-=======
-  }
-}
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
-  }
-}
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes

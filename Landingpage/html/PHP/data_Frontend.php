@@ -152,19 +152,6 @@ try {
 	echo $e->getMessage();
 }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
 ?>
 
 <!DOCTYPE html>
@@ -191,23 +178,7 @@ function validateForm() {
   box-sizing: border-box;
 
 }
-<<<<<<< Updated upstream
 #container {
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-#container {
-=======
-.container {
->>>>>>> Stashed changes
-=======
-#container {
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
-#container {
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -300,23 +271,6 @@ input[type=submit]:hover {
     border-color: #1AA1E1;
 }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-#invulveld{
-  border-right-style: solid;
-  border-color: #1AA1E1;
-}
-
->>>>>>> Stashed changes
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column-25, .column-75, input[type=submit] {
@@ -324,66 +278,21 @@ input[type=submit]:hover {
     margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
-<<<<<<< Updated upstream
     padding: 10px;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    padding: 10px;
-=======
->>>>>>> Stashed changes
-=======
-    padding: 10px;
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
-    padding: 10px;
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
   }
 }
 </style>
 </head>
 <body>
 
-<<<<<<< Updated upstream
 <form action="read.php" method="GET" id="container">
     <aside id="what-why-how-picture">
         <form name="cardForm" onsubmit="return validateForm()">
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<form action="read.php" method="GET" id="container">
-    <aside id="what-why-how-picture">
-        <form name="cardForm" onsubmit="return validateForm()">
-=======
-<section class="container">
-    <aside id="what-why-how-picture">
-        <form name="myForm" onsubmit="return validateForm()" method="post">
->>>>>>> Stashed changes
-=======
-<form action="read.php" method="GET" id="container">
-    <aside id="what-why-how-picture">
-        <form name="cardForm" onsubmit="return validateForm()">
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
-<form action="read.php" method="GET" id="container">
-    <aside id="what-why-how-picture">
-        <form name="cardForm" onsubmit="return validateForm()">
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
             <div class="row">
               <div class="column-25">
                 <label for="invulveld">Onderwerp</label>
               </div>
               <div class="column-75">
-<<<<<<< Updated upstream
-                <input type="text" class="invulveld" name="onderwerp" placeholder="Wat is het onderwerp?" style="height:100px" ></input></div>
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
                 <input type="text" class="invulveld" name="onderwerp" placeholder="Wat is het onderwerp?" style="height:100px" ></input></div>
             </div>
         
@@ -410,109 +319,11 @@ input[type=submit]:hover {
                 <input type="text" class="invulveld" name="how" placeholder="Hoe wordt het toegepast (How)?" style="height:100px" ></input>
               </div>
             </div>
-=======
-                <textarea id="invulveld" name="subject" placeholder="Wat is het onderwerp?" style="height:100px"></textarea></div>
-            </div>
-        
-            <div class="row">
-              <div class="column-25">
-                <label for="wat" id="wat">What</label>
-              </div>
-              <div class="column-75">
-                <textarea id="invulveld" name="subject" placeholder="Wat doet het (What)?" style="height:100px"></textarea></div>
-            </div>
-        
-            <div class="row">
-              <div class="column-25">
-                <label for="why" id="why">Why</label>
-              </div>
-              <div class="column-75">
-                <textarea id="invulveld" name="subject" placeholder="Waarom wordt het toegepast (Why)?" style="height:100px"></textarea></div>
-            </div>
-            <div class="row">
-              <div class="column-25">
-                <label for="how" id="how">How</label>
-              </div>
-              <div class="column-75">
-                <textarea id="invulveld" name="subject" placeholder="Hoe wordt het toegepast (How)?" style="height:100px"></textarea>
-              </div>
-            </div>
->>>>>>> Stashed changes
-=======
-                <input type="text" class="invulveld" name="onderwerp" placeholder="Wat is het onderwerp?" style="height:100px" ></input></div>
-            </div>
-        
-            <div class="row">
-              <div class="column-25">
-                <label for="wat" id="wat">What</label>
-              </div>
-              <div class="column-75">
-                <input type="text" class="invulveld" name="wat" placeholder="Wat doet het (What)?" style="height:100px" ></input></div>
-=======
-                <input type="text" class="invulveld" name="onderwerp" placeholder="Wat is het onderwerp?" style="height:100px" ></input></div>
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-            </div>
-        
-            <div class="row">
-              <div class="column-25">
-<<<<<<< HEAD
-=======
-                <label for="wat" id="wat">What</label>
-              </div>
-              <div class="column-75">
-                <input type="text" class="invulveld" name="wat" placeholder="Wat doet het (What)?" style="height:100px" ></input></div>
->>>>>>> Stashed changes
-            </div>
-        
-            <div class="row">
-              <div class="column-25">
-<<<<<<< Updated upstream
-                <label for="wat" id="wat">What</label>
-              </div>
-              <div class="column-75">
-                <input type="text" class="invulveld" name="wat" placeholder="Wat doet het (What)?" style="height:100px" ></input></div>
-            </div>
-        
-            <div class="row">
-              <div class="column-25">
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
-                <label for="why" id="why">Why</label>
-              </div>
-              <div class="column-75">
-                <input type="text" class="invulveld" name="why" placeholder="Waarom wordt het toegepast (Why)?" style="height:100px" ></input></div>
-            </div>
-            <div class="row">
-              <div class="column-25">
-                <label for="how" class="invulveld">How</label>
-              </div>
-              <div class="column-75">
-                <input type="text" class="invulveld" name="how" placeholder="Hoe wordt het toegepast (How)?" style="height:100px" ></input>
-              </div>
-            </div>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
             <div class="row">
                 <div class="column-25">
                   <label for="plaatje" id="plaatje">Upload afbeelding</label>
                 </div>
                 <div class="column-75">
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
                   <input type="text" class="invulveld" name="plaatje" placeholder="Plaats hier de URL van de afbeelding" style="height:100px" ></input>
                 </div>
             <div class="row">
@@ -638,128 +449,5 @@ input[type=submit]:hover {
   </aside>
 </form>
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                  <textarea id="invulveld" name="subject" placeholder="Bronnen" style="height:100px"></textarea>
-                </div>
-              </div>
-      <h1>Kies je niveau</h1>
-      <aside class="skill">
-        <div class="niveau_block" required>
-          <input class="invulbox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
-          <label class="checkbox"for ="niveau1">Beginner</label><br>
-          <input class="invulbox" type = "checkbox" id="niveau2" name = "niveau[]" value="Gevorderde">
-          <label class="checkbox"for ="niveau2">Gevorderde</label><br>
-          <input class="invulbox" type = "checkbox" id="niveau3" name = "niveau[]" value="Expert">
-          <label class="checkbox"for ="niveau3">Expert</label><br>
-          <script type="text/javascript">
-              $('.invulbox').on('change', function() {
-                  $('.invulbox').not(this).prop('checked', false);  
-              });
-          </script>
-      </aside>
-      <h1>Kies je Rol</h1>
-      <aside class="rol">
-        <div class="check_block" required>
-          <input class="invulbox2" type = "checkbox" id="rol1" name = "rol[]" value="FE">
-          <label class="checkbox2"for ="niveau1">FE</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol2" name = "rol[]" value="BE">
-          <label class="checkbox2"for ="niveau2">BE</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol3" name = "rol[]" value="AI">
-          <label class="checkbox2"for ="niveau3">AI</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol4" name = "rol[]" value="PO">
-          <label class="checkbox2"for ="niveau1">PO</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol5" name = "rol[]" value="CSC">
-          <label class="checkbox2"for ="niveau2">CSC</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol6" name = "rol[]" value="UX Designer">
-          <label class="checkbox2"for ="niveau3">UX Designer</label><br>
-        </div>
-      </aside>
-      <aside class="HBO-I" required>
-        <h1 class="HBO-title">Gebruikersinteractie</h1>
-          <div class="HBO-block" id="gebruikersinteractie">
-            <input class="invulbox3" type = "checkbox" id="competentie1" name="competentie[]" value="Gebruikersinteractie Analyseren">
-            <label class="checkbox3" for ="competentie1">Gebruikersinteractie Analyseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie2" name="competentie[]" value="Gebruikersinteractie Adviseren">
-            <label class="checkbox3" for ="competentie2">Gebruikersinteractie Adviseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie3" name="competentie[]" value="Gebruikersinteractie Ontwerpen">
-            <label class="checkbox3" for ="competentie3">Gebruikersinteractie Ontwerpen</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie4" name="competentie[]" value="Gebruikersinteractie Realiseren">
-            <label class="checkbox3" for ="competentie4">Gebruikersinteractie Realiseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie5" name="competentie[]" value="Gebruikersinteractie Manage & control">
-            <label class="checkbox3" for ="competentie5">Gebruikersinteractie Manage & control</label>
-          </div>
-
-          <h1 class="HBO-title">Organisatieprocessen</h1>
-          <div class="HBO-block" id="organisatieprocessen">
-            <input class="invulbox3" type = "checkbox" id="competentie" name="competentie[]" value="Organisatieprocessen Analyseren">
-            <label class="checkbox3" for ="competentie6">Organisatieprocessen Analyseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie7" name="competentie[]" value="Organisatieprocessen Adviseren">
-            <label class="checkbox3" for ="competentie7">Organisatieprocessen Adviseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie8" name="competentie[]" value="Organisatieprocessen Ontwerpen">
-            <label class="checkbox3" for ="competentie8">Organisatieprocessen Ontwerpen</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie9" name="competentie[]" value="Organisatieprocessen Realiseren">
-            <label class="checkbox3" for ="competentie9">Organisatieprocessen Realiseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie10" name="competentie[]" value="Organisatieprocessen Manage & control">
-            <label class="checkbox3" for ="competentie10">Organisatieprocessen Manage & control</label><br>    
-          </div>
-
-          <h1 class="HBO-title">Infrastructuur</h1>
-          <div class="HBO-block" id="Infrastructuur">
-            <input class="invulbox3" type = "checkbox" id="competentie11" name="competentie[]" value="Infrastructuur Analyseren">
-            <label class="checkbox3" for ="competentie11">Infrastructuur Analyseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie12" name="competentie[]" value="Infrastructuur Adviseren">
-            <label class="checkbox3" for ="competentie12">Infrastructuur Adviseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie13" name="competentie[]" value="Infrastructuur Ontwerpen">
-            <label class="checkbox3" for ="competentie13">Infrastructuur Ontwerpen</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie14" name="competentie[]" value="Infrastructuur Realiseren">
-            <label class="checkbox3" for ="competentie14">Infrastructuur Realiseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie15" name="competentie[]" value="Infrastructuur Manage & control">
-            <label class="checkbox3" for ="competentie15">Infrastructuur Manage & control</label><br>
-          </div>
-    
-          <h1 class="HBO-title">Software</h1>
-          <div class="HBO-block" id="Software">
-            <input class="invulbox3" type = "checkbox" id="competentie11" name="competentie[]" value="Infrastructuur Analyseren">
-            <label class="checkbox3" for ="competentie11">Infrastructuur Analyseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie12" name="competentie[]" value="Infrastructuur Adviseren">
-            <label class="checkbox3" for ="competentie12">Infrastructuur Adviseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie13" name="competentie[]" value="Infrastructuur Ontwerpen">
-            <label class="checkbox3" for ="competentie13">Infrastructuur Ontwerpen</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie14" name="competentie[]" value="Infrastructuur Realiseren">
-            <label class="checkbox3" for ="competentie14">Infrastructuur Realiseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie15" name="competentie[]" value="Infrastructuur Manage & control">
-            <label class="checkbox3" for ="competentie15">Infrastructuur Manage & control</label><br>
-          </div>
-
-          <h1 class="HBO-title">Hardware Interfacing</h1>
-          <div class="HBO-block" id="Hardware-Interfacing">
-            <input class="invulbox3" type = "checkbox" id="competentie21" name="competentie[]" value="Hardware interfacing Analyseren">
-            <label class="checkbox3" for ="competentie21">Hardware interfacing Analyseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie22" name="competentie[]" value="Hardware interfacing Adviseren">
-            <label class="checkbox3" for ="competentie22">Hardware interfacing Adviseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie23" name="competentie[]" value="Hardware interfacing Ontwerpen">
-            <label class="checkbox3" for ="competentie23">Hardware interfacing Ontwerpen</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie24" name="competentie[]" value="Hardware interfacing Realiseren">
-            <label class="checkbox3" for ="competentie24">Hardware interfacing Realiseren</label><br>
-            <input class="invulbox3" type = "checkbox" id="competentie25" name="competentie[]" value="Hardware interfacing Manage & control">
-            <label class="checkbox3" for ="competentie25">Hardware interfacing Manage & control</label><br>
-
-            <div class="button" type="button">
-              <input type="submit" type="submit" value="Kenniskaartje opslaan" name="save">
-          </div>
-        </form>
-      </aside>
-    </div>
-  </section>
->>>>>>> Stashed changes
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
-=======
->>>>>>> a100a847fd5f07fe90888908521a677d15bc302c
->>>>>>> Stashed changes
 </body>
 </html>
