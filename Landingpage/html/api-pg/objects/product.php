@@ -69,11 +69,15 @@ class Product{
             $competentie .= $competentie1.",";
         }
 
+   //     echo  $_POST[onderwerp];
+//        $onderwerp = htmlspecialchars($_POST[onderwerp]);
+        $onderwerp = $_POST[onderwerp];
+//        $onderwerp =htmlspecialchars('äé');
         // query to insert record
         $query = "INSERT INTO
                     " . $this->table_name . "(onderwerp, rol, competentie, wat, why, how, plaatje, bronnen, niveau, studieduur, rating)
                 VALUES(
-                    '$_POST[onderwerp]',
+                    '$onderwerp' ,
                     '$rol',
                     '$competentie',
                     '$_POST[wat]',
@@ -86,24 +90,27 @@ class Product{
                     '$_POST[rating]'
                      )";
 
-        echo $query;
-
         // prepare query
         $stmt = $this->conn->prepare($query);
-    
+
+
+        echo $query;
+        echo '<BR><BR>WTF';
+
         // sanitize
-        $this->onderwerp=htmlspecialchars($this->onderwerp);
-        $this->wat=htmlspecialchars($this->wat);
-        $this->why=htmlspecialchars($this->why);
-        $this->how=htmlspecialchars($this->how);
-        $this->plaatje=htmlspecialchars($this->plaatje);
-        $this->niveau=htmlspecialchars($this->niveau);
-        $this->rol=htmlspecialchars($this->rol);
-        $this->competentie=htmlspecialchars($this->competentie);
-        $this->studieduur=htmlspecialchars($this->studieduur);
-        $this->rating=htmlspecialchars($this->rating);
-        $this->bronnen=htmlspecialchars($this->bronnen);
-    
+        $this->onderwerp=htmlspecialchars($this->onderwerp, ENT_NOQUOTES);
+        $this->wat=htmlspecialchars($this->wat, ENT_NOQUOTES);
+        $this->why=htmlspecialchars($this->why, ENT_NOQUOTES);
+        $this->how=htmlspecialchars($this->how, ENT_NOQUOTES);
+        $this->plaatje=htmlspecialchars($this->plaatje, ENT_NOQUOTES);
+        $this->niveau=htmlspecialchars($this->niveau, ENT_NOQUOTES);
+        $this->rol=htmlspecialchars($this->rol, ENT_NOQUOTES);
+        $this->competentie=htmlspecialchars($this->competentie, ENT_NOQUOTES);
+        $this->studieduur=htmlspecialchars($this->studieduur, ENT_NOQUOTES);
+        $this->rating=htmlspecialchars($this->rating, ENT_NOQUOTES);
+        $this->bronnen=htmlspecialchars($this->bronnen, ENT_NOQUOTES);
+
+
         // execute query
         if($stmt->execute()){
             return true;

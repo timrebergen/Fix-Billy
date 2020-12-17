@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="79cfaed1-b453-49b3-b37b-1086cb55739e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landingpage/html/PHP/aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/PHP/aanmaken.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartaanmaken/aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartaanmaken/aanmaken.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/objects/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/objects/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/product/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/product/create.php" afterDir="false" />
@@ -15,6 +16,13 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -24,6 +32,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -37,6 +46,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Fix-Billy\Fix-Billy\Landingpage\html\api-pg\kenniskaartaanmaken" />
       <recent name="C:\xampp\htdocs\Fix-Billy\Fix-Billy\Landingpage\html\api-pg" />
     </key>
   </component>
@@ -49,7 +59,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607933427586</updated>
       <workItem from="1607933432368" duration="3241000" />
-      <workItem from="1607947837308" duration="7367000" />
+      <workItem from="1607947837308" duration="18163000" />
+      <workItem from="1608127374841" duration="5339000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607933676848</created>
