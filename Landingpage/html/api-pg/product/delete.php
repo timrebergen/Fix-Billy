@@ -19,9 +19,10 @@ $product = new Product($db);
   
 // get product id
 $data = json_decode(file_get_contents("php://input"));
-  
+
+echo $data;
 // set product id to be deleted
-$product->kenniskaart_id = $data->kenniskaart_id;
+$product->onderwerp = $data->onderwerp;
   
 // delete the product
 if($product->delete()){
@@ -31,6 +32,7 @@ if($product->delete()){
   
     // tell the user
     echo json_encode(array("message" => "Product was deleted."));
+    header("Location:http://billy.hu-open-ict.nl/?status=success");//redirect to your html with status
 }
   
 // if unable to delete the product
@@ -38,8 +40,11 @@ else{
   
     // set response code - 503 service unavailable
     http_response_code(503);
-  
+
+    echo $product;
+
     // tell the user
     echo json_encode(array("message" => "Unable to delete product."));
+    header("Location:http://billy.hu-open-ict.nl/?status=failure");//redirect to your html with status
 }
 ?>

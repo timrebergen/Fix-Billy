@@ -151,24 +151,25 @@ const displayRecommended = (Cards) => {
         .map((Card) => {
             return `
             <ul class="cardListRecommended">
-                <h2>${Card.onderwerp}</h2>
-                <p> ${Card.wat}</p>
-                <h1> ${Card.niveau}</h1>
-                <img src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
+                <h2 name="onderwerp">${Card.onderwerp}</h2>
+                <p name="wat"> ${Card.wat}</p>
+                <h1 name="niveau"> ${Card.niveau}</h1>
+                <img name="plaatje" src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
                 <button id="readBtn">Lees meer</button>
-
                 <form class="inline-buttons">
                     <a href="api-pg/kenniskaartbewerken/bewerken.html">
                         <img type= "image" id="editBtnImage" src="css/pen.png" height= "30">
                         </img>
                     </a>
-                    <a href="api-pg/kenniskaartbewerken/bewerken.html">
+                </form>
+                <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
+                    <input hidden name="onderwerp" value="${Card.onderwerp}" />
+                    <button type="submit">
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
-                    </a>
+                    </button>
                 </form>
                 </a>
-
             </ul>
 
             

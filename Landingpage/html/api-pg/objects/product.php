@@ -69,15 +69,11 @@ class Product{
             $competentie .= $competentie1.",";
         }
 
-   //     echo  $_POST[onderwerp];
-//        $onderwerp = htmlspecialchars($_POST[onderwerp]);
-        $onderwerp = $_POST[onderwerp];
-//        $onderwerp =htmlspecialchars('äé');
         // query to insert record
         $query = "INSERT INTO
                     " . $this->table_name . "(onderwerp, rol, competentie, wat, why, how, plaatje, bronnen, niveau, studieduur, rating)
                 VALUES(
-                    '$onderwerp' ,
+                    '$_POST[onderwerp]' ,
                     '$rol',
                     '$competentie',
                     '$_POST[wat]',
@@ -95,7 +91,6 @@ class Product{
 
 
         echo $query;
-        echo '<BR><BR>WTF';
 
         // sanitize
         $this->onderwerp=htmlspecialchars($this->onderwerp, ENT_NOQUOTES);
@@ -228,17 +223,16 @@ class Product{
     function delete(){
     
         // delete query
-        $query = "DELETE FROM " . $this->table_name . " WHERE kenniskaart_id = ?";
+        $query = "DELETE FROM " . $this->table_name . " WHERE onderwerp = '$_POST[onderwerp]'";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
     
         // sanitize
-        $this->kenniskaart_id=htmlspecialchars($this->kenniskaart_id);
-    
-        // bind id of record to delete
-        $stmt->bindParam(1, $this->kenniskaart_id);
-    
+        $this->onderwerp=htmlspecialchars($this->onderwerp);
+
+        echo $query;
+
         // execute query
         if($stmt->execute()){
             return true;

@@ -38,11 +38,13 @@
   
         // set response code - 201 created
         http_response_code(201);
-  
+
+        $redirect_page = 'http://billy.hu-open-ict.nl/';
+
         // tell the user
         echo json_encode(array("message" => "Product was created."));
-        header("Location:http://billy.hu-open-ict.nl/?status=success");//redirect to your html with status
-    }
+        header('location:'.$redirect_page .'?status=success');//redirect to your html with status
+    }//"Location:http://billy.hu-open-ict.nl/?status=success"
   
     // if unable to create the product, tell the user
     // set response code - 503 service unavailable
@@ -50,7 +52,7 @@
 
         // tell the user
         echo json_encode(array("message" => "Unable to create product."));
-        //header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure #1");//redirect to your html with status
+        header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure: Unable to create product. Data Transfer Error.");//redirect to your html with status
     }
     // tell the user data is incomplete
     else{
@@ -60,7 +62,7 @@
 
         // tell the user
         echo json_encode(array("message" => "Unable to create product. Data is incomplete."));
-        header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure 2#");//redirect to your html with status
+        header("Location:../kenniskaartaanmaken/aanmaken.html?status=failure: Unable to create product. Data is incomplete.");//redirect to your html with status
     }
 
 ?>
