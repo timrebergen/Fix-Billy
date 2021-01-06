@@ -37,14 +37,12 @@
     if($product->create()){
   
         // set response code - 201 created
-        http_response_code(201);
-
-        $redirect_page = 'http://billy.hu-open-ict.nl/';
+        http_response_code(200);
 
         // tell the user
         echo json_encode(array("message" => "Product was created."));
-        header('location:'.$redirect_page .'?status=success');//redirect to your html with status
-    }//"Location:http://billy.hu-open-ict.nl/?status=success"
+        header("Location:http://billy.hu-open-ict.nl/?status=success");//redirect to your html with status
+    }
   
     // if unable to create the product, tell the user
     // set response code - 503 service unavailable
