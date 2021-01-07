@@ -108,16 +108,7 @@
 
 
 
-<!-- The Modal -->
-<div id="cardModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>OwO OwO OwO OwO OwO OwO OwO OwO OwO </p>
-  </div>
-
-</div>
 
 <script id="search">
 const searchBar = document.getElementById('searchBar');
@@ -155,7 +146,19 @@ const displayRecommended = (Cards) => {
                 <p name="wat"> ${Card.wat}</p>
                 <h1 name="niveau"> ${Card.niveau}</h1>
                 <img name="plaatje" src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
-                <button id="readBtn">Lees meer</button>
+                <button id="myBtn">Open Modal</button>
+                <div id="cardModal" class="modal"> 
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>${Card.why}</p>
+                    <p>${Card.wat}</p>
+                    <p>${Card.how}</p>
+                    <p>${Card.plaatje}</p>
+                    
+
+                </div>
+            </div>  
+
                 <form class="inline-buttons">
                     <a href="api-pg/kenniskaartbewerken/bewerken.html">
                         <img type= "image" id="editBtnImage" src="css/pen.png" height= "30">
@@ -163,13 +166,13 @@ const displayRecommended = (Cards) => {
                     </a>
                 </form>
                 <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
-                    <input hidden name="onderwerp" value="${Card.onderwerp}" />
-                    <button type="submit"  onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.');">Verwijder
+                    <input hidden onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.');">Verwijder name="onderwerp" value="${Card.onderwerp}" />
+                    <button type="submit">
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
                     </button>
                 </form>
-                </a>
+                <z/a>
             </ul>
 
             
@@ -178,22 +181,58 @@ const displayRecommended = (Cards) => {
         .join('');
         cardListRecommended.innerHTML = htmlString;
         cardListUploaded.innerHTML = htmlString;
+
+   // Get the modal
+var modal = document.getElementById("cardModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
 };
 loadCharacters();
 </script>
 
 <script>
-    // Get the modal
-    var modal = document.getElementById("cardModal");
+    const deleteButton = document.createElement("button");
+    deleteButton.classlist.add("deleteButton");
+    mainDiv.appendChild(Delete);
+    </script>
+
+
+<script defer>
+   // Get the modal
+   var modal = document.getElementsByClassName("cardModal");
     
     // Get the button that opens the modal
-    var btn = document.getElementById("readBtn");
+    var read = document.getElementsByClassName("readBtn");
     
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.querySelector("close");
     
     // When the user clicks the button, open the modal 
-    btn.onclick = function() {
+    read.onclick = function() {
       modal.style.display = "block";
     }
     
@@ -208,6 +247,7 @@ loadCharacters();
         modal.style.display = "none";
       }
     }
+
     </script>
 </section>
 </body>
