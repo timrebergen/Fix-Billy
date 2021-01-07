@@ -164,7 +164,7 @@ const displayRecommended = (Cards) => {
                 </form>
                 <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
                     <input hidden name="onderwerp" value="${Card.onderwerp}" />
-                    <button type="submit">
+                    <button type="submit"  onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.');">Verwijder
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
                     </button>
