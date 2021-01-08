@@ -137,15 +137,17 @@
     position: absolute;
     margin-top: 15px;
     left: 60%;
-    transform: scale(4.00);
+    transform: scale(5.00);
     margin: 50px;
   }
 
   #modalImgSrc{
+    font-size: 16px;
     position: absolute;
     top: 55%;
-    left: 54%;
+    left: 56%;
     font-style: italic;
+    max-width: 15%;
   }
 
   #srcImage {
