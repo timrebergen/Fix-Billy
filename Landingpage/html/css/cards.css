@@ -12,11 +12,15 @@
     margin-top: 135px;
   }
 
+#modalH1{
+  font-size: 28px;
+}
+
   #recommendedTitle, #uploadedTitle{   
     margin-left: 50px;
   }
-
-  .cardListRecommended{
+  
+  .cardListRecommended, .cardListUploaded{
     float: left;
     list-style-type: none;
     background-color: #eaeaea;
@@ -32,6 +36,46 @@
     padding: 15px;
   }
 
+
+  td, th{
+    border: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: #f6f6f6;
+    border-color: #1AA1E1;
+    overflow: hidden;
+    width: 90%;
+    max-width: 100px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    padding: 15px;
+  }
+  
+  .modalTitle{
+    float: left;
+    margin: 5px;
+  }
+  
+#Grid{
+  margin-top: 100px;
+}
+  #pWhat, #pWhy, #pHow, #pImg{
+    margin-left: 125px;
+    margin-top: 25px;
+    border: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: #f6f6f6;
+    border-color: #1AA1E1;
+    overflow: hidden;
+    width: 400px;
+    max-width: 600px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    padding: 12px 15px;
+}
 
   .cardListRecommended> h1 {
     font-size: 16px;
@@ -66,7 +110,7 @@
     margin-right: 5px;
   }
 
-  #readBtn{
+  #myBtn{
     color: #1AA1E1;
     padding: 10px;
     border-style: solid;
@@ -80,23 +124,36 @@
     border: 2px solid #1AA1E1;
   }  
   
-  #readBtn:hover{
+  .bg-info{
+    margin-top: 150px;
+  }
+  #myBtn:hover{
     background-color:#1AA1E1;
     color: white;
     border-radius: 5px;
   }
 
-    #srcImage {
-    position: relative;
+  #modalImg {
+    position: absolute;
     margin-top: 15px;
-    left: 25%;
+    left: 60%;
+    transform: scale(4.00);
+    margin: 50px;
+  }
+
+  #modalImgSrc{
+    position: absolute;
+    top: 55%;
+    left: 54%;
+    font-style: italic;
   }
 
   #srcImage {
     position: relative;
     margin-top: 15px;
-    left: 25%;
+    left: 30%;
     transform: scale(3.00);
+    margin: 50px;
   }
 
   #srcImage:hover{

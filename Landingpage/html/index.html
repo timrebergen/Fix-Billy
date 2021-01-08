@@ -137,6 +137,11 @@ const loadCharacters = async () => {
     }
 };
 
+
+
+
+
+
 const displayRecommended = (Cards) => {
     const htmlString = Cards
         .map((Card) => {
@@ -146,18 +151,46 @@ const displayRecommended = (Cards) => {
                 <p name="wat"> ${Card.wat}</p>
                 <h1 name="niveau"> ${Card.niveau}</h1>
                 <img name="plaatje" src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
-                <button id="myBtn">Open Modal</button>
-                <div id="cardModal" class="modal"> 
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>${Card.why}</p>
-                    <p>${Card.wat}</p>
-                    <p>${Card.how}</p>
-                    <p>${Card.plaatje}</p>
-                    
+                <button id="myBtn">Lees meer</button>
+        
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h1 id="modalH1">${Card.onderwerp}</h1>
+                        <div>
+                            <img name="plaatje" src= "${Card.plaatje}" id="modalImg" width= "85px">
+                                <div id="modalImgSrc">${Card.plaatje}</div>
+                            </img>
 
+                        </div>
+                        <div class="what">
+                            <h1 class="modalTitle" id="titleWhat">Wat is het?</h1>
+                            <p id="pWhat">${Card.wat}</p>
+                        </div>
+
+                        <div class="why">
+                            <h1 class="modalTitle" id="titleWhy">Why?</h1>
+                            <p id="pWhy">${Card.why}</p>
+                        </div>
+
+                        <div class="how">
+                            <h1 class="modalTitle" id="titleHow">How?</h1>
+                            <p id="pHow">${Card.how}</p>
+                        </div>
+
+                        <div id="Grid">
+                            <table class="table table-striped">
+                                <tr class="bg-info">
+                                <th>Bronnen</th>
+                                <th>Niveau</th>
+                                <th>Leestijd?</th>
+                                <th>Rating</th>
+                                </tr>
+                            <tbody id="myTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>  
 
                 <form class="inline-buttons">
                     <a href="api-pg/kenniskaartbewerken/bewerken.html">
@@ -182,8 +215,8 @@ const displayRecommended = (Cards) => {
         cardListRecommended.innerHTML = htmlString;
         cardListUploaded.innerHTML = htmlString;
 
-   // Get the modal
-var modal = document.getElementById("cardModal");
+        // Get the modal
+var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -207,12 +240,42 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-
-
-
 };
 loadCharacters();
 </script>
+
+
+<script>
+    fetch('http://billy.hu-open-ict.nl/api-pg/product/read.php')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            
+        function appendData(data) {
+            var table = document.getElementById('myTable')
+            for (var i = 0; i < data.length; i++) {
+                var p = document.createElement("p"); 
+            }
+            
+
+            var table = document.getElementById('myTable')
+
+            for (var i = 0; i <data.length; i ++){
+                var row = `<tr>
+                        <td>${data[i].bronnen}</td>
+                        <td>${data[i].niveau}</td>
+                        <td>${data[i].studieduur}</td>
+                        <td>${data[i].rating}</td>
+                    </tr>`
+                table.innerHTML += row
+            }
+        }
+    </script>
+
+
 
 <script>
     const deleteButton = document.createElement("button");
