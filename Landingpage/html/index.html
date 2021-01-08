@@ -106,10 +106,6 @@
         <ul id="cardListUploaded" style="min-width: 100%; max-width: 100%; height: auto;"></ul>
     </aside>
 
-
-
-
-
 <script id="search">
 const searchBar = document.getElementById('searchBar');
 let cardRecommended = [];
@@ -136,11 +132,6 @@ const loadCharacters = async () => {
         console.error(err);
     }
 };
-
-
-
-
-
 
 const displayRecommended = (Cards) => {
     const htmlString = Cards
@@ -199,16 +190,13 @@ const displayRecommended = (Cards) => {
                     </a>
                 </form>
                 <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
-                    <input hidden onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.');">Verwijder name="onderwerp" value="${Card.onderwerp}" />
-                    <button type="submit">
+                    <input hidden name="onderwerp" value="${Card.onderwerp}" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.')"/>
+                    <button name="deleteButton" id="deleteButton" type="submit">
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
                     </button>
                 </form>
-                <z/a>
             </ul>
-
-            
         `;
         })
         .join('');
@@ -244,7 +232,6 @@ window.onclick = function(event) {
 loadCharacters();
 </script>
 
-
 <script>
     fetch('http://billy.hu-open-ict.nl/api-pg/product/read.php')
             .then(function (response) {
@@ -275,12 +262,10 @@ loadCharacters();
         }
     </script>
 
-
-
 <script>
     const deleteButton = document.createElement("button");
     deleteButton.classlist.add("deleteButton");
-    mainDiv.appendChild(Delete);
+    mainDiv.appendChild(deleteButton);
     </script>
 
 
