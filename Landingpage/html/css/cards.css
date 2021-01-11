@@ -110,7 +110,7 @@
     margin-right: 5px;
   }
 
-  #myBtn{
+  .modalBtn{
     color: #1AA1E1;
     padding: 10px;
     border-style: solid;
@@ -127,7 +127,7 @@
   .bg-info{
     margin-top: 150px;
   }
-  #myBtn:hover{
+  .modalBtn:hover{
     background-color:#1AA1E1;
     color: white;
     border-radius: 5px;

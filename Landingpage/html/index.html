@@ -138,10 +138,6 @@ const loadCharacters = async () => {
 };
 
 
-
-
-
-
 const displayRecommended = (Cards) => {
     const htmlString = Cards
         .map((Card) => {
@@ -151,7 +147,7 @@ const displayRecommended = (Cards) => {
                 <p name="wat"> ${Card.wat}</p>
                 <h1 name="niveau"> ${Card.niveau}</h1>
                 <img name="plaatje" src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
-                <button id="myBtn">Lees meer</button>
+                <button class="modalBtn">Lees meer</button>
         
                 <div id="myModal" class="modal">
                     <div class="modal-content">
@@ -199,13 +195,13 @@ const displayRecommended = (Cards) => {
                     </a>
                 </form>
                 <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
-                    <input hidden onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.');">Verwijder name="onderwerp" value="${Card.onderwerp}" />
+                    <input hidden type="submit" value="Lees meer" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.');">Verwijder name="onderwerp" value="${Card.onderwerp}" /> 
+                    
                     <button type="submit">
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
                     </button>
                 </form>
-                <z/a>
             </ul>
 
             
@@ -215,26 +211,47 @@ const displayRecommended = (Cards) => {
         cardListRecommended.innerHTML = htmlString;
         cardListUploaded.innerHTML = htmlString;
 
-        // Get the modal
+
+
+
+// Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var allBtns = document.getElementsByClassName("modalBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
+const showModal = function(){
+    modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+for (const button of allBtns) {
+    console.log(button, allBtns)
+    button.addEventListener("click", showModal)
+}
+
+    // Get the <span> element that closes the modal
+        var allCloseBtns = document.getElementsByClassName("close");
+
+for (const closeBtn of allCloseBtns) {
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+}
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+var span = document.getElementsByClassName("close")[0];
+
+
 span.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -280,38 +297,11 @@ loadCharacters();
 <script>
     const deleteButton = document.createElement("button");
     deleteButton.classlist.add("deleteButton");
-    mainDiv.appendChild(Delete);
+    mainDiv.appendChild(deleteButton);
     </script>
 
 
-<script defer>
-   // Get the modal
-   var modal = document.getElementsByClassName("cardModal");
-    
-    // Get the button that opens the modal
-    var read = document.getElementsByClassName("readBtn");
-    
-    // Get the <span> element that closes the modal
-    var span = document.querySelector("close");
-    
-    // When the user clicks the button, open the modal 
-    read.onclick = function() {
-      modal.style.display = "block";
-    }
-    
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
 
-    </script>
 </section>
 </body>
 </html>
