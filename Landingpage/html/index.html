@@ -185,15 +185,13 @@ const displayRecommended = (Cards) => {
                 </div>
 
                 <form action="api-pg/kenniskaartbewerken/bewerken.html" method="post" class="inline-buttons">
-                    <input hidden value="${cardRecommended}"/>
-                    <button name="updateButton" id="updateButton" type="submit">
+                    <button name="updateButton" value="${loadCharacters}" id="updateButton" type="submit">
                         <img type= "image" id="editBtnImage" src="css/pen.png" height= "30">
                         </img>
                     </button>
                 </form>
                 <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
-                    <input hidden type="submit" name="onderwerp" value="${Card.onderwerp}"/>
-                    <button name="deleteButton" id="deleteButton" type="submit" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.')">
+                    <button name="onderwerp" id="deleteButton" value="${Card.onderwerp}" type="submit" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.')">
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
                     </button>
