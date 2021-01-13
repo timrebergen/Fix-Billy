@@ -203,39 +203,41 @@ input[type=submit]:hover {
       <div class="checkboxList">
         <h1>Kies je niveau</h1>
         <aside class="skill">
-          <div class="niveau_block" required>
-            <input class="invulbox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
-            <label class="checkbox"for ="niveau1">Beginner</label><br>
-            <input class="invulbox" type = "checkbox" id="niveau2" name = "niveau[]" value="Gevorderde">
-            <label class="checkbox"for ="niveau2">Gevorderde</label><br>
-            <input class="invulbox" type = "checkbox" id="niveau3" name = "niveau[]" value="Expert">
-            <label class="checkbox"for ="niveau3">Expert</label><br>
+          <div class="niveau_block">
+            <input class="niveaubox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
+            <label class="checkbox" for ="niveau1">Beginner</label><br>
+            <input class="niveaubox" type = "checkbox" id="niveau2" name = "niveau[]" value="Gevorderde">
+            <label class="checkbox" for ="niveau2">Gevorderde</label><br>
+            <input class="niveaubox" type = "checkbox" id="niveau3" name = "niveau[]" value="Expert">
+            <label class="checkbox" for ="niveau3">Expert</label><br>
 
             <script type="text/javascript">
-                $('.invulbox').on('change', function() {
-                    $('.invulbox').not(this).prop('checked', false);
+                $('.niveaubox').on('change', function() {
+                    $('.niveaubox').not(this).prop('checked', false);
                 });
             </script>
           </div>
         </aside>
+
         <h1>Kies je Rol</h1>
         <aside class="rol">
-          <div class="check_block" name="rol" required>
+          <div class="check_block" id="rol">
             <input class="invulbox2" type = "checkbox" id="rol1" name = "rol[]" value="FE">
-            <label class="checkbox2"for ="niveau1">Front-end</label><br>
+            <label class="checkbox2" for ="rol1">Front-end</label><br>
             <input class="invulbox2" type = "checkbox" id="rol2" name = "rol[]" value="BE">
-            <label class="checkbox2"for ="niveau2">Back-end</label><br>
+            <label class="checkbox2" for ="rol2">Back-end</label><br>
             <input class="invulbox2" type = "checkbox" id="rol3" name = "rol[]" value="AI">
-            <label class="checkbox2"for ="niveau3">Artificial Intelligence</label><br>
+            <label class="checkbox2" for ="rol3">Artificial Intelligence</label><br>
             <input class="invulbox2" type = "checkbox" id="rol4" name = "rol[]" value="PO">
-            <label class="checkbox2"for ="niveau1">Product Owner</label><br>
+            <label class="checkbox2" for ="rol4">Product Owner</label><br>
             <input class="invulbox2" type = "checkbox" id="rol5" name = "rol[]" value="CSC">
-            <label class="checkbox2"for ="niveau2">Cyber Security & Cloud</label><br>
+            <label class="checkbox2" for ="rol5">Cyber Security & Cloud</label><br>
             <input class="invulbox2" type = "checkbox" id="rol6" name = "rol[]" value="UX Designer">
-            <label class="checkbox2"for ="niveau3">User Experience</label><br>
+            <label class="checkbox2" for ="rol6">User Experience</label><br>
           </div>
         </aside>
-        <aside class="HBO-I" required>
+
+        <aside class="HBO-I">
           <h1 class="HBO-title">Gebruikersinteractie</h1>
             <div class="HBO-block" id="gebruikersinteractie">
               <input class="invulbox3" type = "checkbox" id="competentie1" name="competentie[]" value="Gebruikersinteractie Analyseren">
