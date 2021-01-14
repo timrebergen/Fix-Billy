@@ -34,7 +34,7 @@ if($num>0){
         extract($row);
 
         $product_item=array(
-            "kenniskaart_id" =>  $kenniskaart_id,
+            "kenniskaart_id" => $kenniskaart_id,
             "onderwerp" => $onderwerp,
             "wat" => $wat,
             "why" => $why,

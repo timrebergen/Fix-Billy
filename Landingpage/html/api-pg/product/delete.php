@@ -22,7 +22,7 @@ $data = json_decode(file_get_contents("php://input"));
 
 echo $data;
 // set product id to be deleted
-$product->onderwerp = $data->onderwerp;
+$product->kenniskaart_id = $data->kenniskaart_id;
   
 // delete the product
 if($product->delete()){

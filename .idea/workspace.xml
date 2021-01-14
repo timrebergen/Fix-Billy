@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="79cfaed1-b453-49b3-b37b-1086cb55739e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/objects/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/objects/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/product/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/product/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/product/read.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/product/read.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landingpage/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +75,8 @@
       <workItem from="1608127374841" duration="7557000" />
       <workItem from="1609751003329" duration="23113000" />
       <workItem from="1610527411296" duration="3004000" />
+      <workItem from="1610611598390" duration="3568000" />
+      <workItem from="1610651290032" duration="4784000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607933676848</created>

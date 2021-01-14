@@ -59,15 +59,18 @@ class Product{
         $rol="";
         foreach($checkbox2 as $rol1)
         {
-            $rol .= $rol1.",";
+            $rol .= $rol1 . ", ";
         }
+        //$rol = ltrim($rol, strlen($rol)-3);
+        $rol = rtrim($rol,', ');
 
         $checkbox3=$_POST['competentie'];
         $competentie="";
         foreach($checkbox3 as $competentie1)
         {
-            $competentie .= $competentie1.",";
+            $competentie .= $competentie1.", ";
         }
+        $competentie = rtrim($competentie,', ');
 
         // query to insert record
         $query = "INSERT INTO
@@ -223,7 +226,7 @@ class Product{
     function delete(){
     
         // delete query
-        $query = "DELETE FROM " . $this->table_name . " WHERE onderwerp = '$_POST[onderwerp]'";
+        $query = "DELETE FROM " . $this->table_name . " WHERE kenniskaart_id = '$_POST[kenniskaart_id]'";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
