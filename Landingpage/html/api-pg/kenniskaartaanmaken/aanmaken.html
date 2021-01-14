@@ -138,7 +138,8 @@ input[type=submit]:hover {
                 <label for="invulveld1">Onderwerp</label>
               </div>
               <div class="column-75">
-                <input id="invulveld1" type="text" class="invulveld" name="onderwerp" placeholder="Wat is het onderwerp?" style="height:100px" ></input></div>
+                <input id="invulveld1" type="text" class="invulveld" name="onderwerp" placeholder="Wat is het onderwerp?" style="height:100px" >
+              </div>
             </div>
 
             <div class="row">
@@ -146,7 +147,8 @@ input[type=submit]:hover {
                 <label for="invulveld2" id="wat">What</label>
               </div>
               <div class="column-75">
-                <input id="invulveld2" type="text" class="invulveld" name="wat" placeholder="Wat doet het (What)?" style="height:100px" ></input></div>
+                <input id="invulveld2" type="text" class="invulveld" name="wat" placeholder="Wat doet het (What)?" style="height:100px" >
+              </div>
             </div>
 
             <div class="row">
@@ -154,14 +156,15 @@ input[type=submit]:hover {
                 <label for="invulveld3" id="why">Why</label>
               </div>
               <div class="column-75">
-                <input id="invulveld3" type="text" class="invulveld" name="why" placeholder="Waarom wordt het toegepast (Why)?" style="height:100px" ></input></div>
+                <input id="invulveld3" type="text" class="invulveld" name="why" placeholder="Waarom wordt het toegepast (Why)?" style="height:100px" >
+              </div>
             </div>
             <div class="row">
               <div class="column-25">
                 <label for="invulveld4" class="invulveld">How</label>
               </div>
               <div class="column-75">
-                <input id="invulveld4" type="text" class="invulveld" name="how" placeholder="Hoe wordt het toegepast (How)?" style="height:100px" ></input>
+                <input id="invulveld4" type="text" class="invulveld" name="how" placeholder="Hoe wordt het toegepast (How)?" style="height:100px" >
               </div>
             </div>
             <div class="row">
@@ -169,7 +172,7 @@ input[type=submit]:hover {
                   <label for="invulveld5" id="plaatje">Upload afbeelding</label>
                 </div>
                 <div class="column-75">
-                  <input id="invulveld5" type="text" class="invulveld" name="plaatje" placeholder="Plaats hier je afbeeldingen" style="height:100px" ></input>
+                  <input id="invulveld5" type="text" class="invulveld" name="plaatje" placeholder="Plaats hier je afbeeldingen" style="height:100px" >
                 </div>
             </div>
             <div class="row">
@@ -177,7 +180,7 @@ input[type=submit]:hover {
                   <label for="invulveld6" id="bronnen">Bronnen</label>
                 </div>
                 <div class="column-75">
-                  <input id="invulveld6" type="text" class="invulveld" name="bronnen" placeholder="Zet hier je bronnen neer" style="height:100px" ></input>
+                  <input id="invulveld6" type="text" class="invulveld" name="bronnen" placeholder="Zet hier je bronnen neer" style="height:100px" >
                 </div>
             </div>
             <div class="row">
@@ -200,38 +203,41 @@ input[type=submit]:hover {
       <div class="checkboxList">
         <h1>Kies je niveau</h1>
         <aside class="skill">
-          <div class="niveau_block" required>
-            <input class="invulbox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
-            <label class="checkbox"for ="niveau1">Beginner</label><br>
-            <input class="invulbox" type = "checkbox" id="niveau2" name = "niveau[]" value="Gevorderde">
-            <label class="checkbox"for ="niveau2">Gevorderde</label><br>
-            <input class="invulbox" type = "checkbox" id="niveau3" name = "niveau[]" value="Expert">
-            <label class="checkbox"for ="niveau3">Expert</label><br>
-          </div>
+          <div class="niveau_block">
+            <input class="niveaubox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
+            <label class="checkbox" for ="niveau1">Beginner</label><br>
+            <input class="niveaubox" type = "checkbox" id="niveau2" name = "niveau[]" value="Gevorderde">
+            <label class="checkbox" for ="niveau2">Gevorderde</label><br>
+            <input class="niveaubox" type = "checkbox" id="niveau3" name = "niveau[]" value="Expert">
+            <label class="checkbox" for ="niveau3">Expert</label><br>
+
             <script type="text/javascript">
-                $('.invulbox').on('change', function() {
-                    $('.invulbox').not(this).prop('checked', false);
+                $('.niveaubox').on('change', function() {
+                    $('.niveaubox').not(this).prop('checked', false);
                 });
             </script>
-        </aside>
-        <h1>Kies je Rol</h1>
-        <aside class="rol">
-          <div class="check_block" name="rol" required>
-            <input class="invulbox2" type = "checkbox" id="rol1" name = "rol[]" value="FE">
-            <label class="checkbox2"for ="niveau1">Front-end</label><br>
-            <input class="invulbox2" type = "checkbox" id="rol2" name = "rol[]" value="BE">
-            <label class="checkbox2"for ="niveau2">Back-end</label><br>
-            <input class="invulbox2" type = "checkbox" id="rol3" name = "rol[]" value="AI">
-            <label class="checkbox2"for ="niveau3">Artificial Intelligence</label><br>
-            <input class="invulbox2" type = "checkbox" id="rol4" name = "rol[]" value="PO">
-            <label class="checkbox2"for ="niveau1">Product Owner</label><br>
-            <input class="invulbox2" type = "checkbox" id="rol5" name = "rol[]" value="CSC">
-            <label class="checkbox2"for ="niveau2">Cyber Security & Cloud</label><br>
-            <input class="invulbox2" type = "checkbox" id="rol6" name = "rol[]" value="UX Designer">
-            <label class="checkbox2"for ="niveau3">User Experience</label><br>
           </div>
         </aside>
-        <aside class="HBO-I" required>
+
+        <h1>Kies je Rol</h1>
+        <aside class="rol">
+          <div class="check_block" id="rol">
+            <input class="invulbox2" type = "checkbox" id="rol1" name = "rol[]" value="FE">
+            <label class="checkbox2" for ="rol1">Front-end</label><br>
+            <input class="invulbox2" type = "checkbox" id="rol2" name = "rol[]" value="BE">
+            <label class="checkbox2" for ="rol2">Back-end</label><br>
+            <input class="invulbox2" type = "checkbox" id="rol3" name = "rol[]" value="AI">
+            <label class="checkbox2" for ="rol3">Artificial Intelligence</label><br>
+            <input class="invulbox2" type = "checkbox" id="rol4" name = "rol[]" value="PO">
+            <label class="checkbox2" for ="rol4">Product Owner</label><br>
+            <input class="invulbox2" type = "checkbox" id="rol5" name = "rol[]" value="CSC">
+            <label class="checkbox2" for ="rol5">Cyber Security & Cloud</label><br>
+            <input class="invulbox2" type = "checkbox" id="rol6" name = "rol[]" value="UX Designer">
+            <label class="checkbox2" for ="rol6">User Experience</label><br>
+          </div>
+        </aside>
+
+        <aside class="HBO-I">
           <h1 class="HBO-title">Gebruikersinteractie</h1>
             <div class="HBO-block" id="gebruikersinteractie">
               <input class="invulbox3" type = "checkbox" id="competentie1" name="competentie[]" value="Gebruikersinteractie Analyseren">
