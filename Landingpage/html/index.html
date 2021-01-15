@@ -186,17 +186,25 @@ const displayRecommended = (Cards) => {
                 </div>
 
                 <form action="api-pg/kenniskaartbewerken/bewerken.html" method="post" class="inline-buttons">
+<<<<<<< HEAD
                     <input hidden value="${cardRecommended}"/>
                     <button name="updateButton" id="updateButton" type="submit">
+=======
+                    <button name="updateButton" value="${Card.kenniskaart_id}" id="updateButton" type="submit">
+>>>>>>> 6945991334a497a30166117724f31cc1883b0a4a
                         <img type= "image" id="editBtnImage" src="css/pen.png" height= "30">
                         </img>
                     </button>
                 </form>
+
                 <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
+<<<<<<< HEAD
 
                     <input hidden type="submit" value="Lees meer" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.');">Verwijder name="onderwerp" value="${Card.onderwerp}" /> 
                     <button type="submit">
                     <input hidden name="onderwerp" value="${Card.kenniskaart_id}" />
+=======
+>>>>>>> 6945991334a497a30166117724f31cc1883b0a4a
                     <button name="deleteButton" id="deleteButton" value="${Card.kenniskaart_id}" type="submit" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.')">
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
