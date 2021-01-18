@@ -66,6 +66,7 @@
             placeholder="Zoeken..."
             />
     </div>
+
         <div class="form" id="Values">
             <form>
                 <label for="Niv-select">Kies je Niveau:</label>
@@ -75,6 +76,7 @@
                 <option value="Expert">Expert</option>
                 </select>
             </form>
+
             <form>
                 <label for="Rol-select">Kies je Rol:</label>
                 <select name="select" id="Rol-select">
@@ -86,6 +88,7 @@
                 </select>
             </form>
         </div>
+
         <div class="button" id="Add">
             <a href="api-pg/kenniskaartaanmaken/aanmaken.html">
                 <button class="Add add-1">
@@ -101,6 +104,7 @@
         <h1 id="recommendedTitle">Aanbevolen</h1>
         <ul id="cardListRecommended" style="min-width: 100%; max-width: 100%; height: auto;"></ul>
     </aside>
+
     <aside class="list" id="uploadedContainer">
         <h1 id="uploadedTitle">Geüpload</h1>
         <ul id="cardListUploaded" style="min-width: 100%; max-width: 100%; height: auto;"></ul>
@@ -115,7 +119,6 @@ searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value;
     const filteredCards = cardRecommended.filter(cardRecommended => {
         return (
-            cardRecommended.kenniskaart_id.includes(searchString) ||
             cardRecommended.onderwerp.includes(searchString) ||
             cardRecommended.wat.includes(searchString)
         );
@@ -134,7 +137,6 @@ const loadCharacters = async () => {
     }
 };
 
-
 const displayRecommended = (Cards) => {
     const htmlString = Cards
         .map((Card) => {
@@ -145,11 +147,12 @@ const displayRecommended = (Cards) => {
                 <h1 name="niveau"> ${Card.niveau}</h1>
                 <img name="plaatje" src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
                 <button class="modalBtn">Lees meer</button>
-        
+
                 <div id="myModal" class="modal">
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <h1 id="modalH1">${Card.onderwerp}</h1>
+
                         <div>
                             <img name="plaatje" src= "${Card.plaatje}" id="modalImg" width= "85px">
                                 <div id="modalImgSrc">${Card.plaatje}</div>
@@ -186,26 +189,14 @@ const displayRecommended = (Cards) => {
                 </div>
 
                 <form action="api-pg/kenniskaartbewerken/bewerken.html" method="post" class="inline-buttons">
-<<<<<<< HEAD
-                    <input hidden value="${cardRecommended}"/>
-                    <button name="updateButton" id="updateButton" type="submit">
-=======
-                    <button name="updateButton" value="${Card.kenniskaart_id}" id="updateButton" type="submit">
->>>>>>> 6945991334a497a30166117724f31cc1883b0a4a
+                    <button name="kenniskaart_id" id="updateButton" value="${Card.kenniskaart_id}" type="submit">
                         <img type= "image" id="editBtnImage" src="css/pen.png" height= "30">
                         </img>
                     </button>
                 </form>
 
                 <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
-<<<<<<< HEAD
-
-                    <input hidden type="submit" value="Lees meer" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.');">Verwijder name="onderwerp" value="${Card.onderwerp}" /> 
-                    <button type="submit">
-                    <input hidden name="onderwerp" value="${Card.kenniskaart_id}" />
-=======
->>>>>>> 6945991334a497a30166117724f31cc1883b0a4a
-                    <button name="deleteButton" id="deleteButton" value="${Card.kenniskaart_id}" type="submit" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.')">
+                    <button name="kenniskaart_id" id="deleteButton" value="${Card.kenniskaart_id}" type="submit" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.')">
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
                     </button>

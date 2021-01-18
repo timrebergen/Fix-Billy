@@ -59,15 +59,17 @@ class Product{
         $rol="";
         foreach($checkbox2 as $rol1)
         {
-            $rol .= $rol1.",";
+            $rol .= $rol1.", ";
         }
+        $rol = rtrim($rol,', ');
 
         $checkbox3=$_POST['competentie'];
         $competentie="";
         foreach($checkbox3 as $competentie1)
         {
-            $competentie .= $competentie1.",";
+            $competentie .= $competentie1.", ";
         }
+        $competentie = rtrim($competentie,', ');
 
         // query to insert record
         $query = "INSERT INTO
@@ -168,15 +170,18 @@ class Product{
         $rol="";
         foreach($checkbox2 as $rol1)
         {
-            $rol .= $rol1.",";
+            $rol .= $rol1.", ";
         }
+        $rol = rtrim($rol,', ');
 
         $checkbox3=$_POST['competentie'];
         $competentie="";
         foreach($checkbox3 as $competentie1)
         {
-            $competentie .= $competentie1.",";
+            $competentie .= $competentie1.", ";
         }
+        $competentie = rtrim($competentie,', ');
+
 
         // update query
         $query = "UPDATE " . $this->table_name . " 
@@ -223,7 +228,7 @@ class Product{
     function delete(){
     
         // delete query
-        $query = "DELETE FROM " . $this->table_name . " WHERE onderwerp = '$_POST[onderwerp]'";
+        $query = "DELETE FROM " . $this->table_name . " WHERE kenniskaart_id = '$_POST[kenniskaart_id]'";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -306,6 +311,26 @@ class Product{
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
         return $row['total_rows'];
+    }
+
+    // read products
+    function ReadUpdate(){
+
+        // select all query
+        $query = "SELECT
+                    *
+                FROM
+                    ". $this->table_name . " 
+                where
+                    kenniskaart_id = '$_POST[kenniskaart_id]'";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
     }
 }
 ?>
