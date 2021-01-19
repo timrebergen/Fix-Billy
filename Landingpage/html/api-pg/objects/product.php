@@ -197,7 +197,7 @@ class Product{
                      niveau = '$niveau',
                      studieduur = '$_POST[studieduur]',
                      rating = '$_POST[rating]'
-                 WHERE onderwerp = '$_POST[onderwerp]' ";
+                 WHERE kenniskaart_id = '$_POST[kenniskaart_id]' ";
 
         // prepare query statement
         echo $query;
