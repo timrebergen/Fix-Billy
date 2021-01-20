@@ -15,20 +15,23 @@ function validateForm() {
         return true;
     }
 }
-
-var UpdateClient = function(kenniskaart_id) {
-  $.ajax({
-    url: '../product/ReadUpdate.php',
-    type: 'POST',
-    data: {kenniskaart_id:kenniskaart_id},
-    success: function(data) {
-      console.log(data); // Inspect this in your console
-    }
-  });
-};
-
 </script>
-<form action="../product/ReadUpdate.php">
+
+<form action="../product/ReadUpdate.php" method="post">
+  <input hidden name="kenniskaart_id" />
+
+  <script>
+    var UpdateClient = function(kenniskaart_id) {
+      $.ajax({
+        url: '../product/ReadUpdate.php',
+        type: 'POST',
+        data: {kenniskaart_id:kenniskaart_id},
+        success: function(data) {
+          console.log(data); // Inspect this in your console
+        }
+      });
+    };
+  </script>
   <button>
     test
   </button>
