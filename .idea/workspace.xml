@@ -77,7 +77,7 @@
       <workItem from="1610527411296" duration="3004000" />
       <workItem from="1610957406585" duration="2196000" />
       <workItem from="1611044285563" duration="4529000" />
-      <workItem from="1611129844782" duration="4369000" />
+      <workItem from="1611129844782" duration="4427000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607933676848</created>
@@ -156,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611140344706</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update kenniskaart aanmaken">
+      <created>1611140372760</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611140372760</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
