@@ -66,7 +66,6 @@
             placeholder="Zoeken..."
             />
     </div>
-
         <div class="form" id="Values">
             <form>
                 <label for="Niv-select">Kies je Niveau:</label>
@@ -76,7 +75,6 @@
                 <option value="Expert">Expert</option>
                 </select>
             </form>
-
             <form>
                 <label for="Rol-select">Kies je Rol:</label>
                 <select name="select" id="Rol-select">
@@ -88,7 +86,6 @@
                 </select>
             </form>
         </div>
-
         <div class="button" id="Add">
             <a href="api-pg/kenniskaartaanmaken/aanmaken.html">
                 <button class="Add add-1">
@@ -104,7 +101,6 @@
         <h1 id="recommendedTitle">Aanbevolen</h1>
         <ul id="cardListRecommended" style="min-width: 100%; max-width: 100%; height: auto;"></ul>
     </aside>
-
     <aside class="list" id="uploadedContainer">
         <h1 id="uploadedTitle">Geüpload</h1>
         <ul id="cardListUploaded" style="min-width: 100%; max-width: 100%; height: auto;"></ul>
@@ -119,6 +115,7 @@ searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value;
     const filteredCards = cardRecommended.filter(cardRecommended => {
         return (
+            cardRecommended.kenniskaart_id.includes(searchString) ||
             cardRecommended.onderwerp.includes(searchString) ||
             cardRecommended.wat.includes(searchString)
         );
@@ -137,6 +134,7 @@ const loadCharacters = async () => {
     }
 };
 
+
 const displayRecommended = (Cards) => {
     const htmlString = Cards
         .map((Card) => {
@@ -147,56 +145,17 @@ const displayRecommended = (Cards) => {
                 <h1 name="niveau"> ${Card.niveau}</h1>
                 <img name="plaatje" src= "${Card.plaatje}" id="srcImage" width= "85px"</img>
                 <button class="modalBtn">Lees meer</button>
-
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h1 id="modalH1">${Card.onderwerp}</h1>
-
-                        <div>
-                            <img name="plaatje" src= "${Card.plaatje}" id="modalImg" width= "85px">
-                                <div id="modalImgSrc">${Card.plaatje}</div>
-                            </img>
-
-                        </div>
-                        <div class="what">
-                            <h1 class="modalTitle" id="titleWhat">Wat is het?</h1>
-                            <p id="pWhat">${Card.wat}</p>
-                        </div>
-
-                        <div class="why">
-                            <h1 class="modalTitle" id="titleWhy">Why?</h1>
-                            <p id="pWhy">${Card.why}</p>
-                        </div>
-
-                        <div class="how">
-                            <h1 class="modalTitle" id="titleHow">How?</h1>
-                            <p id="pHow">${Card.how}</p>
-                        </div>
-
-                        <div id="Grid">
-                            <table class="table table-striped">
-                                <tr class="bg-info">
-                                <th>Bronnen</th>
-                                <th>Niveau</th>
-                                <th>Leestijd?</th>
-                                <th>Rating</th>
-                                </tr>
-                            <tbody id="myTable"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
+        
                 <form action="api-pg/kenniskaartbewerken/bewerken.html" method="post" class="inline-buttons">
-                    <button name="kenniskaart_id" id="updateButton" value="${Card.kenniskaart_id}" type="submit">
+                    <input hidden value="${cardRecommended}"/>
+                    <button name="updateButton" id="updateButton" type="submit" value>
                         <img type= "image" id="editBtnImage" src="css/pen.png" height= "30">
                         </img>
                     </button>
                 </form>
 
                 <form action="api-pg/product/delete.php" method="POST" class="inline-buttons">
-                    <button name="kenniskaart_id" id="deleteButton" value="${Card.kenniskaart_id}" type="submit" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.')">
+                    <button name="deleteButton" id="deleteButton" value="${Card.kenniskaart_id}" type="submit" onclick="return confirm('Wil je het kenniskaartje verwijderen? Dit kan niet ongedaan worden gemaakt.')">
                         <img type= "image" id="deleteBtnImage" src="css/trash_main.png" height= "50">
                         </img>
                     </button>
@@ -207,14 +166,14 @@ const displayRecommended = (Cards) => {
         .join('');
         cardListRecommended.innerHTML = htmlString;
         cardListUploaded.innerHTML = htmlString;
+        
 
 
 
 
-// Get the modal
 var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
+
 var allBtns = document.getElementsByClassName("modalBtn");
 
 const showModal = function(){
@@ -226,7 +185,7 @@ for (const button of allBtns) {
     button.addEventListener("click", showModal)
 }
 
-    // Get the <span> element that closes the modal
+
         var allCloseBtns = document.getElementsByClassName("close");
 
 for (const closeBtn of allCloseBtns) {
@@ -235,7 +194,7 @@ for (const closeBtn of allCloseBtns) {
     }
 }
     
-    // When the user clicks anywhere outside of the modal, close it
+
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
