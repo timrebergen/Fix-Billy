@@ -176,91 +176,81 @@ input[type=submit]:hover {
     <h2 id="alertmessage">Jij bevind je nu op de bewerkingspagina van het kenniskaartje.</h2>
 </aside>
 
-<script>
-    const loadCharacters = async () => {
-    try {
-        const res = await fetch('http://billy.hu-open-ict.nl/api-pg/product/ReadUpdate.php');
-        cardRecommended = await res.json();
-        displayRecommended(cardRecommended);
-    } catch (err) {
-        console.error(err);
-        console.log(cardRecommended);
-    }
-};
-</script>
+
+
 
 <section class="container">
     <section id="what-why-how-picture">
-        <form name="myForm" onsubmit="return validateForm()" action="../product/read.php" method="post">
+        <form name="myForm" onsubmit="return validateForm()" action="../product/update.php" method="post">
             <div class="row">
               <div class="column-25">
                 <label for="invulveld1">Onderwerp</label>
               </div>
               <div class="column-75">
-                <textarea id="invulveld1" name="onderwerp" placeholder="Wat is het onderwerp?" style="height:100px" required></textarea>
+                <textarea id="onderwerp" name="onderwerp" placeholder="Wat is het onderwerp?" style="height:100px" required></textarea>
               </div>
             </div>
         
             <div class="row">
               <div class="column-25">
-                <label for="wat" id="wat">What</label>
+                <label for="wat">What</label>
               </div>
               <div class="column-75">
-                <textarea id="invulveld2" name="wat" placeholder="Wat doet het (What)?" style="height:100px" required></textarea>
+                <textarea id="wat" name="wat" placeholder="Wat doet het (What)?" style="height:100px" required></textarea>
               </div>
             </div>
         
             <div class="row">
               <div class="column-25">
-                <label for="why" id="why">Why</label>
+                <label for="why">Why</label>
               </div>
               <div class="column-75">
-                <textarea id="invulveld3" name="why" placeholder="Waarom wordt het toegepast (Why)?" style="height:100px" required></textarea>
+                <textarea id="why" name="why" placeholder="Waarom wordt het toegepast (Why)?" style="height:100px" required></textarea>
               </div>
             </div>
 
             <div class="row">
               <div class="column-25">
-                <label for="how" id="how">How</label>
+                <label for="how">How</label>
               </div>
               <div class="column-75">
-                <textarea id="invulveld4" name="how" placeholder="Hoe wordt het toegepast (How)?" style="height:100px" required></textarea>
+                <textarea id="how" name="how" placeholder="Hoe wordt het toegepast (How)?" style="height:100px" required></textarea>
               </div>
             </div>
 
             <div class="row">
                 <div class="column-25">
-                  <label for="plaatje" id="plaatje">Upload afbeelding</label>
+                  <label for="plaatje">Upload afbeelding</label>
                 </div>
                 <div class="column-75">
-                  <textarea id="invulveld5" name="plaatje" placeholder="Plaats hier de URL van de afbeelding" style="height:100px" required></textarea>
+                  <textarea id="plaatje" name="plaatje" placeholder="Plaats hier de URL van de afbeelding" style="height:100px" required></textarea>
                 </div>
             </div>
 
             <div class="row">
                 <div class="column-25">
-                  <label for="bronnen" id="bronnen">Bronnen</label>
+                  <label for="bronnen">Bronnen</label>
                 </div>
                 <div class="column-75">
-                  <textarea id="invulveld6" name="bronnen" placeholder="Zet hier je bronnen neer" style="height:100px" required></textarea>
+                  <textarea id="bronnen" name="bronnen" placeholder="Zet hier je bronnen neer" style="height:100px" required></textarea>
                 </div>
             </div>
 
             <div class="row">
               <div class="column-25">
-                <label for="rating" id="rating">Rating</label>
+                <label for="rating">Rating</label>
               </div>
               <div class="column-75">
-                <textarea id="invulveld7" name="rating" placeholder="Zet hier je rating neer" style="height:100px" required></textarea>
+                <textarea id="rating" name="rating" placeholder="Zet hier je rating neer" style="height:100px" required></textarea>
               </div>
             </div>
 
             <div class="row">
               <div class="column-25">
-                <label for="studieduur" id="studieduur">Studieduur</label>
+                <label for="studieduur">Studieduur</label>
               </div>
               <div class="column-75">
-                <textarea id="invulveld8" name="studieduur" placeholder="Zet hier je studieduur neer" style="height:100px" required></textarea>
+                <textarea id="studieduur" name="studieduur" placeholder="Zet hier je studieduur neer" style="height:100px" required></textarea>
               </div>
             </div>
 
@@ -376,5 +366,52 @@ input[type=submit]:hover {
         </form>
     </section>
 </section>
+
+<script>
+const loadCards = async () => {
+  try {
+      const res = await fetch('http://billy.hu-open-ict.nl/api-pg/product/read.php');
+      billyCardAsString = await res.json();
+  } catch (err) {
+      console.error(err);
+  }
+};
+loadCards();
+
+
+ var billyCardAsString = localStorage.getItem('billyCard');
+ var cardObject = JSON.parse(billyCardAsString);
+ console.log(billyCardAsString);
+
+  for (var kenniskaart_id in billyCardAsString) {
+    document.getElementById("onderwerp").value = billyCardAsString.kenniskaart_id;
+  }
+  for (var what in billyCardAsString) {
+    document.getElementById("wat").value = billyCardAsString.wat;
+  }
+  for (var what in billyCardAsString) {
+    document.getElementById("why").value = billyCardAsString.why;
+  }
+  for (var what in billyCardAsString) {
+    document.getElementById("how").value = billyCardAsString.how;
+  }
+  for (var what in billyCardAsString) {
+    document.getElementById("plaatje").value = billyCardAsString.plaatje;
+  }
+
+  for (var what in billyCardAsString) {
+    document.getElementById("bronnen").value = billyCardAsString.bronnen;
+  }
+  for (var what in billyCardAsString) {
+    document.getElementById("rating").value = billyCardAsString.rating;
+  }
+  for (var what in billyCardAsString) {
+    document.getElementById("studieduur").value = billyCardAsString.studieduur;
+  }
+  
+console.log(kenniskaart_id);
+
+</script>
+
 </body>
 </html>

@@ -168,7 +168,9 @@ const displayRecommended = (Cards) => {
         cardListUploaded.innerHTML = htmlString;
         
 
-
+var billyCardAsString= JSON.stringify(Cards);
+localStorage.setItem('billyCard', billyCardAsString);
+console.log(JSON.stringify({Cards: billyCardAsString}));
 
 
 var modal = document.getElementById("myModal");
@@ -217,35 +219,6 @@ window.onclick = function(event) {
 loadCharacters();
 </script>
 
-<script>
-    fetch('http://billy.hu-open-ict.nl/api-pg/product/read.php')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data);
-            })
-            
-        function appendData(data) {
-            var table = document.getElementById('myTable')
-            for (var i = 0; i < data.length; i++) {
-                var p = document.createElement("p"); 
-            }
-            
-
-            var table = document.getElementById('myTable')
-
-            for (var i = 0; i <data.length; i ++){
-                var row = `<tr>
-                        <td>${data[i].bronnen}</td>
-                        <td>${data[i].niveau}</td>
-                        <td>${data[i].studieduur}</td>
-                        <td>${data[i].rating}</td>
-                    </tr>`
-                table.innerHTML += row
-            }
-        }
-    </script>
 
 <script>
     const deleteButton = document.createElement("button");
