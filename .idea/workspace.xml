@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79cfaed1-b453-49b3-b37b-1086cb55739e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/product/ReadUpdate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartaanmaken/aanmaken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartaanmaken/aanmaken.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/objects/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/objects/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/product/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/product/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +30,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -52,13 +49,17 @@
       <recent name="C:\xampp\htdocs\Fix-Billy\Fix-Billy\Landingpage\html\api-pg" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.bewerken.html">
+    <configuration name="bewerken.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Fix-Billy/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Landingpage/html/api-pg/product/create.php">
       <CommandLine parameters="-a" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.bewerken.html" />
         <item itemvalue="PHP Script.test" />
       </list>
     </recent_temporary>
@@ -76,7 +77,9 @@
       <workItem from="1608127374841" duration="7557000" />
       <workItem from="1609751003329" duration="23113000" />
       <workItem from="1610527411296" duration="3004000" />
-      <workItem from="1610957406585" duration="1004000" />
+      <workItem from="1610957406585" duration="2196000" />
+      <workItem from="1611044285563" duration="4529000" />
+      <workItem from="1611129844782" duration="1569000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607933676848</created>
@@ -106,7 +109,28 @@
       <option name="project" value="LOCAL" />
       <updated>1608194379856</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update kenniskaart aanmaken">
+      <created>1611046621406</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611046621406</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update kenniskaart aanmaken">
+      <created>1611046706703</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611046706703</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update kenniskaart aanmaken">
+      <created>1611059598231</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1611059598231</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

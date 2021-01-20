@@ -15,8 +15,24 @@ function validateForm() {
         return true;
     }
 }
-</script>
 
+var UpdateClient = function(kenniskaart_id) {
+  $.ajax({
+    url: '../product/ReadUpdate.php',
+    type: 'POST',
+    data: {kenniskaart_id:kenniskaart_id},
+    success: function(data) {
+      console.log(data); // Inspect this in your console
+    }
+  });
+};
+
+</script>
+<form action="../product/ReadUpdate.php">
+  <button>
+    test
+  </button>
+</form>
 <style>
 * {
   box-sizing: border-box;
