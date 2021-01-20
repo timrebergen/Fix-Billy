@@ -368,49 +368,35 @@ input[type=submit]:hover {
 </section>
 
 <script>
-const loadCards = async () => {
-  try {
-      const res = await fetch('http://billy.hu-open-ict.nl/api-pg/product/read.php');
-      billyCardAsString = await res.json();
-  } catch (err) {
-      console.error(err);
-  }
-};
-loadCards();
-
-
  var billyCardAsString = localStorage.getItem('billyCard');
  var cardObject = JSON.parse(billyCardAsString);
- console.log(billyCardAsString);
-
+ console.log(JSON.stringify({billyCardAsString}));
+ 
   for (var kenniskaart_id in billyCardAsString) {
-    document.getElementById("onderwerp").value = billyCardAsString.kenniskaart_id;
+    document.getElementById("onderwerp").value = billyCardAsString.onderwerp;
   }
   for (var what in billyCardAsString) {
     document.getElementById("wat").value = billyCardAsString.wat;
   }
-  for (var what in billyCardAsString) {
+  for (var why in billyCardAsString) {
     document.getElementById("why").value = billyCardAsString.why;
   }
-  for (var what in billyCardAsString) {
+  for (var how in billyCardAsString) {
     document.getElementById("how").value = billyCardAsString.how;
   }
-  for (var what in billyCardAsString) {
+  for (var plaatje in billyCardAsString) {
     document.getElementById("plaatje").value = billyCardAsString.plaatje;
   }
 
-  for (var what in billyCardAsString) {
+  for (var bronnen in billyCardAsString) {
     document.getElementById("bronnen").value = billyCardAsString.bronnen;
   }
-  for (var what in billyCardAsString) {
+  for (var rating in billyCardAsString) {
     document.getElementById("rating").value = billyCardAsString.rating;
   }
-  for (var what in billyCardAsString) {
+  for (var studieduur in billyCardAsString) {
     document.getElementById("studieduur").value = billyCardAsString.studieduur;
   }
-  
-console.log(kenniskaart_id);
-
 </script>
 
 </body>
