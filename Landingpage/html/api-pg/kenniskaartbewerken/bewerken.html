@@ -195,11 +195,26 @@ input[type=submit]:hover {
     <h2 id="alertmessage">Jij bevind je nu op de bewerkingspagina van het kenniskaartje.</h2>
 </aside>
 
+<script>
+
+const loadCharacters = async () => {
+    try {
+        const res = await fetch('http://billy.hu-open-ict.nl/api-pg/product/read.php');
+        cardRecommended = await res.json();
+        displayRecommended(cardRecommended);
+    } catch (err) {
+        console.error(err);
+        console.log(cardRecommended);
+    }
+};
+
+
+
+</script>
+
 <section class="container">
     <section id="what-why-how-picture">
-        <form name="myForm" onsubmit="return validateForm()" action="../product/update.php" method="post">
-            <h1 name="kenniskaart_id" id="kenniskaart_id"></h1>
-
+        <form name="myForm" onsubmit="return validateForm()" action="../product/read.php" method="post">
             <div class="row">
               <div class="column-25">
                 <label for="invulveld1">Onderwerp</label>
@@ -226,6 +241,7 @@ input[type=submit]:hover {
                 <textarea id="invulveld3" name="why" placeholder="Waarom wordt het toegepast (Why)?" style="height:100px" required></textarea>
               </div>
             </div>
+
             <div class="row">
               <div class="column-25">
                 <label for="how" id="how">How</label>
@@ -234,6 +250,7 @@ input[type=submit]:hover {
                 <textarea id="invulveld4" name="how" placeholder="Hoe wordt het toegepast (How)?" style="height:100px" required></textarea>
               </div>
             </div>
+
             <div class="row">
                 <div class="column-25">
                   <label for="plaatje" id="plaatje">Upload afbeelding</label>
@@ -242,6 +259,7 @@ input[type=submit]:hover {
                   <textarea id="invulveld5" name="plaatje" placeholder="Plaats hier de URL van de afbeelding" style="height:100px" required></textarea>
                 </div>
             </div>
+
             <div class="row">
                 <div class="column-25">
                   <label for="bronnen" id="bronnen">Bronnen</label>
@@ -250,6 +268,7 @@ input[type=submit]:hover {
                   <textarea id="invulveld6" name="bronnen" placeholder="Zet hier je bronnen neer" style="height:100px" required></textarea>
                 </div>
             </div>
+
             <div class="row">
               <div class="column-25">
                 <label for="rating" id="rating">Rating</label>
@@ -258,6 +277,7 @@ input[type=submit]:hover {
                 <textarea id="invulveld7" name="rating" placeholder="Zet hier je rating neer" style="height:100px" required></textarea>
               </div>
             </div>
+
             <div class="row">
               <div class="column-25">
                 <label for="studieduur" id="studieduur">Studieduur</label>
@@ -270,36 +290,38 @@ input[type=submit]:hover {
       <h1>Kies je niveau</h1>
       <aside class="skill">
         <div class="niveau_block">
-          <input class="invulbox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
+          <input class="niveaubox" type = "checkbox" id="niveau1" name = "niveau[]" value="Beginner">
           <label class="checkbox" for ="niveau1">Beginner</label><br>
-          <input class="invulbox" type = "checkbox" id="niveau2" name = "niveau[]" value="Gevorderde">
+          <input class="niveaubox" type = "checkbox" id="niveau2" name = "niveau[]" value="Gevorderde">
           <label class="checkbox" for ="niveau2">Gevorderde</label><br>
-          <input class="invulbox" type = "checkbox" id="niveau3" name = "niveau[]" value="Expert">
+          <input class="niveaubox" type = "checkbox" id="niveau3" name = "niveau[]" value="Expert">
           <label class="checkbox" for ="niveau3">Expert</label><br>
         </div>
           <script type="text/javascript">
-              $('.invulbox').on('change', function() {
-                  $('.invulbox').not(this).prop('checked', false);  
+              $('.niveaubox').on('change', function() {
+                  $('.niveaubox').not(this).prop('checked', false);
               });
           </script>
       </aside>
-      <h1>Kies je Rol</h1>
-      <aside class="rol">
-        <div class="check_block">
-          <input class="invulbox2" type = "checkbox" id="rol1" name = "rol[]" value="FE">
-          <label class="checkbox2" for ="rol1">Front-end</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol2" name = "rol[]" value="BE">
-          <label class="checkbox2" for ="rol2">Back-end</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol3" name = "rol[]" value="AI">
-          <label class="checkbox2" for ="rol3">Artificial Intelligence</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol4" name = "rol[]" value="PO">
-          <label class="checkbox2" for ="rol4">Product Owner</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol5" name = "rol[]" value="CSC">
-          <label class="checkbox2" for ="rol5">Cyber Security & Cloud</label><br>
-          <input class="invulbox2" type = "checkbox" id="rol6" name = "rol[]" value="UX Designer">
-          <label class="checkbox2" for ="rol6">User Experience</label><br>
-        </div>
-      </aside>
+
+          <h1>Kies je Rol</h1>
+          <aside class="rol">
+            <div class="check_block" id="rol">
+              <input class="invulbox2" type = "checkbox" id="rol1" name = "rol[]" value="FE">
+              <label class="checkbox2" for ="rol1">Front-end</label><br>
+              <input class="invulbox2" type = "checkbox" id="rol2" name = "rol[]" value="BE">
+              <label class="checkbox2" for ="rol2">Back-end</label><br>
+              <input class="invulbox2" type = "checkbox" id="rol3" name = "rol[]" value="AI">
+              <label class="checkbox2" for ="rol3">Artificial Intelligence</label><br>
+              <input class="invulbox2" type = "checkbox" id="rol4" name = "rol[]" value="PO">
+              <label class="checkbox2" for ="rol4">Product Owner</label><br>
+              <input class="invulbox2" type = "checkbox" id="rol5" name = "rol[]" value="CSC">
+              <label class="checkbox2" for ="rol5">Cyber Security & Cloud</label><br>
+              <input class="invulbox2" type = "checkbox" id="rol6" name = "rol[]" value="UX Designer">
+              <label class="checkbox2" for ="rol6">User Experience</label><br>
+            </div>
+          </aside>
+
       <aside class="HBO-I">
         <h1 class="HBO-title">Gebruikersinteractie</h1>
           <div class="HBO-block" id="gebruikersinteractie">
