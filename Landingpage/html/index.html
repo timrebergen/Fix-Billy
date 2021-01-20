@@ -147,7 +147,7 @@ const displayRecommended = (Cards) => {
                 <button class="modalBtn">Lees meer</button>
         
                 <form action="api-pg/kenniskaartbewerken/bewerken.html" method="post" class="inline-buttons">
-                    <input hidden value="${cardRecommended}"/>
+                    <input hidden value="${Card.kenniskaart_id}"/>
                     <button name="updateButton" id="updateButton" type="submit" value>
                         <img type= "image" id="editBtnImage" src="css/pen.png" height= "30">
                         </img>

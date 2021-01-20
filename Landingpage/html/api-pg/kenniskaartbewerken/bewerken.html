@@ -18,24 +18,25 @@ function validateForm() {
 </script>
 
 <form action="../product/ReadUpdate.php" method="post">
-  <input hidden name="kenniskaart_id" />
+    <input hidden name="kenniskaart_id" />
 
-  <script>
-    var UpdateClient = function(kenniskaart_id) {
-      $.ajax({
-        url: '../product/ReadUpdate.php',
-        type: 'POST',
-        data: {kenniskaart_id:kenniskaart_id},
-        success: function(data) {
-          console.log(data); // Inspect this in your console
-        }
-      });
-    };
-  </script>
-  <button>
-    test
-  </button>
+    <script>
+        var UpdateClient = function(kenniskaart_id) {
+            $.ajax({
+                url: '../product/ReadUpdate.php',
+                type: 'POST',
+                data: {kenniskaart_id:kenniskaart_id},
+                success: function(data) {
+                    console.log(data); // Inspect this in your console
+                }
+            });
+        };
+    </script>
+    <button>
+        test
+    </button>
 </form>
+
 <style>
 * {
   box-sizing: border-box;
@@ -196,10 +197,9 @@ input[type=submit]:hover {
 </aside>
 
 <script>
-
-const loadCharacters = async () => {
+    const loadCharacters = async () => {
     try {
-        const res = await fetch('http://billy.hu-open-ict.nl/api-pg/product/read.php');
+        const res = await fetch('http://billy.hu-open-ict.nl/api-pg/product/ReadUpdate.php');
         cardRecommended = await res.json();
         displayRecommended(cardRecommended);
     } catch (err) {
@@ -207,9 +207,6 @@ const loadCharacters = async () => {
         console.log(cardRecommended);
     }
 };
-
-
-
 </script>
 
 <section class="container">
