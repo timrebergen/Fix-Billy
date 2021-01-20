@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79cfaed1-b453-49b3-b37b-1086cb55739e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/api-pg/kenniskaartbewerken/bewerken.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landingpage/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Landingpage/html/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,7 @@
       <workItem from="1610527411296" duration="3004000" />
       <workItem from="1610957406585" duration="2196000" />
       <workItem from="1611044285563" duration="4529000" />
-      <workItem from="1611129844782" duration="4306000" />
+      <workItem from="1611129844782" duration="4343000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607933676848</created>
@@ -144,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611138552293</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update kenniskaart aanmaken">
+      <created>1611140313644</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1611140313644</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
