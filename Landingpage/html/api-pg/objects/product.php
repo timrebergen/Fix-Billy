@@ -327,6 +327,8 @@ class Product{
         // prepare query statement
         $stmt = $this->conn->prepare($query);
 
+        Echo $query;
+
         // execute query
         $stmt->execute();
 
