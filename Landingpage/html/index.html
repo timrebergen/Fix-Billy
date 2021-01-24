@@ -147,10 +147,15 @@ const displayRecommended = (Cards) => {
             return `
             <ul class="cardListRecommended">     
                 <div id="myModal" class="modal">
-                    <h1 id="h1Difficulty" name="niveau">${Card.niveau}</h1>  
                     <div class="modal-content">
+                        
                         <h1 class="modalTitle" id="titleSubject">Onderwerp</h1>
-                        <p id="pSubject">${Card.onderwerp}</p>
+                        <p id="pSubject">Niveau: ${Card.niveau}
+                            <br>
+                            <br>
+                            ${Card.onderwerp} 
+
+                        </p>
                         <div>
                         
                         <div class="what">
@@ -181,7 +186,7 @@ const displayRecommended = (Cards) => {
                                 <th>Rating</th>
                                 </tr>
                             <tbody id="myTable">
-                                <td>${Card.bronnen}</td>
+                                <td>${Card.bronnen}</a></td>
                                 <td>${Card.niveau}</td>
                                 <td>${Card.studieduur}</td>
                                 <td>${Card.rating}</td>
@@ -214,72 +219,14 @@ const displayRecommended = (Cards) => {
         .join('');
         cardListRecommended.innerHTML = htmlString;
         cardListUploaded.innerHTML = htmlString;
-
-        // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 };
 loadCharacters();
 </script>
-
-
 
 <script>
     const deleteButton = document.createElement("button");
     deleteButton.classlist.add("deleteButton");
     mainDiv.appendChild(deleteButton);
-    </script>
-
-
-<script defer>
-   // Get the modal
-   var modal = document.getElementsByClassName("cardModal");
-    
-    // Get the button that opens the modal
-    var read = document.getElementsByClassName("readBtn");
-    
-    // Get the <span> element that closes the modal
-    var span = document.querySelector("close");
-    
-    // When the user clicks the button, open the modal 
-    read.onclick = function() {
-      modal.style.display = "block";
-    }
-    
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-
     </script>
 </section>
 </body>

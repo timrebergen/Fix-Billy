@@ -9,7 +9,7 @@
   }
 
   #recommendedContainer,#uploadedContainer{
-    margin-top: 135px;
+    margin-top: 155px;
   }
 
 
@@ -29,8 +29,8 @@
     'What';
     min-width: 75%;
     max-width: 75%;
-    margin-top: 15px;
-    padding: 15px;
+    margin-bottom: 105px;
+    padding: 5px;
   }
   
   #h1Difficulty{
@@ -38,13 +38,11 @@
     left: 65%;
   }
 
-
-
-  
   .modalTitle{
     position: relative;
     margin: 15px;
     float: left;
+      transition-duration: 0.5s;
   }
   
 #Grid{
@@ -52,6 +50,9 @@
   max-width: 95%;
 }
 
+#pSubject{
+  font-weight: bold;
+}
 
 #pSubject, #pWhat, #pWhy, #pHow{
     margin-left: 185px;
@@ -71,7 +72,6 @@
 }
 
 td, th{
-  
   border: 2px;
   border-style: solid;
   border-radius: 5px;
@@ -176,13 +176,14 @@ td, th{
     #contentMain{
       margin-left: 0px;
   }
-
-
-  @media (max-width:65em) {
+  #srcImage{
+    margin: 45px;
+    transform: scale(3.00);
+  }
     #srcImage:hover{
-      transform: scale(4.00);
-      -ms-transform: scale(4.00);
-      -webkit-transform: scale(4.00);
+      transform: scale(5.00);
+      -ms-transform: scale(5.00);
+      -webkit-transform: scale(5.00);
     }
 
     #contentMain > * {
@@ -191,14 +192,50 @@ td, th{
     #contentMain > .full {
       grid-column: 1 / -1;
     }
+
+    .modalTitle{
+      font-size: 14px;
+      
+    }
     #cardListRecommended, #cardListUploaded{
       display: grid;
       margin-top: 15px;
-      grid-gap: 10px;
-      grid-template-columns: repeat(515, calc(15% - 1px));
-      grid-template-rows: minmax(10px, 1fr);
-      padding: 0 50px;
+      grid-gap: 20px;
+      grid-template-columns: repeat(215, calc(15% - 1px));
+      grid-template-rows: minmax( 1fr);
     }
-  }
+
+    
+    #pSubject{
+      font-weight: bold;
+    }
+    #pSubject, #pWhat, #pWhy, #pHow{
+      margin-left: 160px;
+      font-size: 12px;
+      margin-top: 15px;
+      border: 2px;
+      border-style: solid;
+      border-radius: 5px;
+      background-color: #f6f6f6;
+      border-color: #1AA1E1;
+      overflow: hidden;
+      min-width: 265px;
+      max-width: 265px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+
+    td, th{
+      vertical-align: center;
+      font-size: 12px;
+      width: 60%;
+      max-width: 100%;
+      hyphens: auto;
+      padding: 10px;
+    }
+
+
 }
+
 

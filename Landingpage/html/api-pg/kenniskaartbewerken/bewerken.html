@@ -181,7 +181,7 @@ input[type=submit]:hover {
 
 <section class="container">
     <section id="what-why-how-picture">
-        <form name="myForm" onsubmit="return validateForm()" action="../product/update.php" method="post">
+        <form name="myForm" onsubmit="return validateForm()" action="../product/update.php" method="POST">
             <div class="row">
               <div class="column-25">
                 <label for="invulveld1">Onderwerp</label>
@@ -370,8 +370,12 @@ input[type=submit]:hover {
 <script>
  var billyCardAsString = localStorage.getItem('billyCard');
  var cardObject = JSON.parse(billyCardAsString);
- console.log(JSON.stringify({billyCardAsString}));
- 
+ console.log(JSON.stringify({billyCardAsString})
+ );
+ console.log(cardObject.onderwerp);
+ var cardFromLocalStorage = Object.assign(new Cards, cardObject);
+console.log(cardFromLocalStorage.onderwerp);
+
   for (var kenniskaart_id in billyCardAsString) {
     document.getElementById("onderwerp").value = billyCardAsString.onderwerp;
   }
@@ -387,7 +391,6 @@ input[type=submit]:hover {
   for (var plaatje in billyCardAsString) {
     document.getElementById("plaatje").value = billyCardAsString.plaatje;
   }
-
   for (var bronnen in billyCardAsString) {
     document.getElementById("bronnen").value = billyCardAsString.bronnen;
   }
