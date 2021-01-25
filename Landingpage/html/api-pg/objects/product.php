@@ -186,7 +186,6 @@ class Product{
         // update query
         $query = "UPDATE " . $this->table_name . " 
                  SET 
-                     onderwerp = '$_POST[onderwerp]',
                      rol = '$rol',
                      competentie = '$competentie',
                      wat = '$_POST[wat]',
@@ -197,7 +196,7 @@ class Product{
                      niveau = '$niveau',
                      studieduur = '$_POST[studieduur]',
                      rating = '$_POST[rating]'
-                 WHERE kenniskaart_id = '$_POST[kenniskaart_id]' ";
+                 WHERE onderwerp = '$_POST[onderwerp]' ";
 
         // prepare query statement
         echo $query;

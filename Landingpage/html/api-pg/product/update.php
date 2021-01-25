@@ -21,10 +21,9 @@
   $data = json_decode(file_get_contents("php://input"));
   
   // set ID property of product to be edited
-  $product->kenniskaart_id = $data->kenniskaart_id;
+  $product->onderwerp = $data->onderwerp;
 
   // set product property values
-  $product->onderwerp = $data->onderwerp;
   $product->wat = $data->wat;
   $product->why = $data->why;
   $product->how = $data->how;
