@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<script>
+function validateForm() {
+    let elemlength = document.getElementById('invulveld').value.length;
+    if (elemlength > 350) {
+        alert("De beschrijving mag niet langer dan 350 karakters zijn");
+        return false;
+    } else {
+        post_description()
+        return true;
+    }
+}
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+
+}
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 70%;
+  display: inline-block;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 15%;
+  margin-top: 15px;
+}
+
+html{
+  background-image: url(css/Showcase_back_main.png);
+  width: 75%;
+}
+
+#editwindow{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  min-width: 25%;
+  width: 30%;
+  display: inline-block;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 65%;
+  margin-top: 15px;
+  position: fixed;
+}
+
+#alerttitle{
+  font-size: 24px;
+}
+
+#alertmessage{
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+#invulveld:focus {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 18px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  margin-top: 55px;
+  padding: 5px;
+  border: solid;
+  border-color: #ccc;
+  border-width: 2px;
+  transition-duration: .3s;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  font-size: 24px;
+}
+
+input[type=submit]:hover {
+    background-color: #ed0010;
+    color: white;
+}
+
+.row label{
+    font-weight: bold
+}
+.column-25 {
+  float: left;
+  margin-left: 15px;
+  width: 25%;
+  margin-top: 6px;
+  transition-duration: 0.5s;
+}
+
+.column-75 {
+  float: left;
+  margin-left: 25px;
+  width: 55%;
+  margin-top: 15px;
+  transition-duration: 0.5s;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.HBO-block, .skill, .rol  {
+    margin-top: 15px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    padding: 5px;
+    border-color: #ed0010;
+}
+
+#invulveld{
+  border-width: 2px;
+  border-right-style: solid;
+  border-color: #ed0010;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .column-25, .column-75, input[type=submit], #editwindow {
+    width: 100%;
+    margin-top: 25px;
+    margin-left: 1px;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 900px) {
+  #editwindow{
+  width: 100%;
+  left: 0%;
+  position: relative;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+<aside id="editwindow">
+    <img 
+        src="css/Alert.png" width="25%" alt="">
+    </img>
+    <h1 id="alerttitle">Bewerkingspagina</h1>
+    <h2 id="alertmessage">Jij bevind je nu op de bewerkingspagina van het kenniskaartje.</h2>
+</aside>
+
+<script>
+    const loadCharacters = async () => {
+    try {
+        const res = await fetch('http://billy.hu-open-ict.nl/api-pg/product/ReadUpdate.php');
+        cardRecommended = await res.json();
+        displayRecommended(cardRecommended);
+    } catch (err) {
+        console.error(err);
+        console.log(cardRecommended);
+    }
+};
+</script>
+
+
+
+<section class="container">
+        <form name="myForm" onsubmit="return validateForm()" action="../product/update.php" method="post">
+        
+            <div class="row">
+              <div class="column-25">
+                <label for="wat" id="wat">What</label>
+              </div>
+              <div class="column-75">
+                <textarea id="invulveld2" name="wat" placeholder="Wat doet het (What)?" style="height:100px" required></textarea>
+              </div>
+            </div>
+<script>
+ var billyCardAsString = localStorage.getItem('billyCard');
+ var cardObject = JSON.parse(billyCardAsString);
+ console.log(billyCardAsString);
+</script>
+
+
+<script>
+    `
+    <textarea id="invulveld2" name="wat" placeholder="Wat doet het (What)?" style="height:100px" required>${kenniskaart_id}</textarea>
+    
+    `
+</script>
+
+
+</body>
+</html>
